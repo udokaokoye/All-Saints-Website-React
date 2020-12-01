@@ -1,0 +1,533 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #9b9b9b;
+  height: 20vh;
+  color: white;
+}
+
+.nav .logo h1 {
+  font-weight: 'Roboto';
+  font-weight: 200;
+  font-size: 39px;
+}
+
+.nav .tabs {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.nav .tabs .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.nav .tabs .inner button {
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 9px;
+}
+
+.nav .tabs .inner button:focus {
+  outline: none;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.nav .tabs .inner .logout {
+  background-color: #eb1111;
+  color: white;
+}
+
+.cnt .title {
+  font-family: 'Roboto';
+  font-weight: 200;
+  font-size: 45px;
+  text-align: center;
+}
+
+.cnt .content {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.cnt .content h3 {
+  font-family: 'Roboto';
+  font-weight: 200;
+  font-size: 29px;
+  padding-bottom: 25px;
+}
+
+.cnt .content .cnt_main {
+  border: 1px solid #868686;
+  width: 50%;
+  height: auto;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  border-radius: 9px;
+  padding: 10px;
+}
+
+.cnt .content .cnt_main h1 {
+  font-family: 'Roboto';
+  font-weight: 200;
+}
+
+.cnt .content .cnt_main p {
+  opacity: 0.5;
+  padding: 5px;
+}
+
+.cnt .content .cnt_main hr {
+  opacity: 0.5;
+  margin: 10px 0;
+}
+
+.cnt .content .cnt_main .cnt_msg {
+  opacity: 1;
+  line-height: 28px;
+}
+
+.cnt .content .cnt_main .bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cnt .content .cnt_main .bar .act_bt {
+  width: 20%;
+  height: 100%;
+}
+
+.cnt .content .cnt_main .bar .act_bt button {
+  background: red;
+  border: 1px solid white;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.cnt .content .cnt_main .bar .act_bt button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.prayer_req .title {
+  font-family: 'Roboto';
+  font-weight: 200;
+  font-size: 45px;
+  text-align: center;
+}
+
+.prayer_req .content {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.prayer_req .content h3 {
+  font-family: 'Roboto';
+  font-weight: 200;
+  font-size: 29px;
+  padding-bottom: 25px;
+}
+
+.prayer_req .content .cnt_main {
+  border: 1px solid #868686;
+  width: 50%;
+  height: auto;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  border-radius: 9px;
+  padding: 10px;
+}
+
+.prayer_req .content .cnt_main h1 {
+  font-family: 'Roboto';
+  font-weight: 200;
+}
+
+.prayer_req .content .cnt_main p {
+  opacity: 0.5;
+  padding: 5px;
+}
+
+.prayer_req .content .cnt_main hr {
+  opacity: 0.5;
+  margin: 10px 0;
+}
+
+.prayer_req .content .cnt_main .cnt_msg {
+  opacity: 1;
+  line-height: 28px;
+}
+
+.prayer_req .content .cnt_main .bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prayer_req .content .cnt_main .bar .act_bt {
+  width: 20%;
+  height: 100%;
+}
+
+.prayer_req .content .cnt_main .bar .act_bt button {
+  background: red;
+  border: 1px solid white;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.prayer_req .content .cnt_main .bar .act_bt button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.add_admin {
+  width: 75%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.add_admin .title {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+  padding: 25px;
+  font-size: 25px;
+}
+
+.add_admin .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.add_admin .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.add_admin .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add_admin .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.add_admin .form {
+  width: 80%;
+}
+
+.add_admin .form .inpt-div {
+  width: 100%;
+}
+
+.add_admin .form .inpt-div h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.add_admin .form .inpt-div h3 span {
+  color: red;
+}
+
+.add_admin .form .inpt-div .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.add_admin .form .inpt-div .input .inpt1, .add_admin .form .inpt-div .input .inpt2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.add_admin .form .inpt-div .input .inpt1 input, .add_admin .form .inpt-div .input .inpt2 input {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.add_admin .form .inpt-div .input .inpt1 textarea, .add_admin .form .inpt-div .input .inpt2 textarea {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 5px;
+  font-family: 'Roboto';
+  border: 1px solid #363636;
+}
+
+.add_admin .form .inpt-div .input .inpt1 small, .add_admin .form .inpt-div .input .inpt2 small {
+  opacity: 0.7;
+}
+
+.add_admin .form .submit {
+  padding: 25px 0px;
+}
+
+.add_admin .form .submit button {
+  height: 48px;
+  width: 130px;
+  background-color: #2d2dfd;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.add_admin .form .submit button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.774);
+  border: 1px solid blue;
+}
+
+.add_editor {
+  width: 75%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.add_editor .title {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+  padding: 25px;
+  font-size: 25px;
+}
+
+.add_editor .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.add_editor .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.add_editor .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add_editor .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.add_editor .form {
+  width: 80%;
+}
+
+.add_editor .form .inpt-div {
+  width: 100%;
+}
+
+.add_editor .form .inpt-div h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.add_editor .form .inpt-div h3 span {
+  color: red;
+}
+
+.add_editor .form .inpt-div .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.add_editor .form .inpt-div .input .inpt1, .add_editor .form .inpt-div .input .inpt2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.add_editor .form .inpt-div .input .inpt1 input, .add_editor .form .inpt-div .input .inpt2 input {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.add_editor .form .inpt-div .input .inpt1 textarea, .add_editor .form .inpt-div .input .inpt2 textarea {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 5px;
+  font-family: 'Roboto';
+  border: 1px solid #363636;
+}
+
+.add_editor .form .inpt-div .input .inpt1 small, .add_editor .form .inpt-div .input .inpt2 small {
+  opacity: 0.7;
+}
+
+.add_editor .form .submit {
+  padding: 25px 0px;
+}
+
+.add_editor .form .submit button {
+  height: 48px;
+  width: 130px;
+  background-color: #2d2dfd;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.add_editor .form .submit button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.774);
+  border: 1px solid blue;
+}
+/*# sourceMappingURL=Admin.css.map */

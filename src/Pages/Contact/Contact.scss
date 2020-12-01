@@ -1,0 +1,271 @@
+.contact{
+    margin-top: 12vh;
+}
+
+.cnt-tp{
+    height: 20vh;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.808);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    h1 {
+        font-size: 50px;
+        font-family: 'Roboto';
+        font-weight: 200;
+    }
+}
+
+.cnt-inf {
+    margin-top: 20px;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .map{
+        width: 50%;
+        height: 100%;
+        background: transparent;
+    }
+
+    .address{
+        width: 50%;
+        height: 100%;
+        // background: blue;
+        h1 {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 31px;
+            padding: 0px 20px;
+        }
+
+        span {
+            font-family: 'Roboto';
+            padding: 1px 20px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        p{
+            padding: 15px 20px;
+        }
+
+        .sml-txt {
+            padding-left: 20px;
+        }
+    }
+}
+
+.contact-form {
+    width: 100%;
+    height: auto;
+
+    hr {
+        padding-bottom: 25px;
+    }
+
+    .message-box {
+        width: 25%;
+        height: 17vh;
+        // background: red;
+        margin: 0 auto;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            color: white;
+            font-size: 18px;
+        }
+    }
+    .titl{
+        text-align: center;
+        font-family: 'Roboto';
+        font-weight: 200;
+        font-size: 45px;
+        padding: 25px;
+    }
+
+    .form {
+        padding: 25px;
+        width: 50%;
+        margin: 0 auto;
+
+        .name, .phone, .email, .message {
+            width: 100%;
+            h3{ 
+                font-family: 'Roboto';
+                font-weight: 200;
+                font-size: 22px;
+
+                span {
+                    color: red;
+                }
+            }
+
+            .input{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .inpt1, .inpt2 {
+                    display: flex;
+                    flex-direction:  column;
+                    padding: 20px 0px;
+                    width: 100%;
+
+                    input {
+                        height: 40px;
+                        width: 250px;
+                        border-radius: 4px;
+                        border: 1px solid rgb(54, 54, 54);
+                        margin-bottom: 8px;
+                    }
+
+                    small {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        .message {
+            .input {
+                .inpt1{
+                    textarea {
+                        border-radius: 4px;
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+
+        .submit{
+            button {
+                height: 48px;
+                width: 130px;
+                background-color: rgb(45, 45, 253);
+                transition: all 0.5s ease-in-out;
+                cursor: pointer;
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: transparent;
+                    color: rgba(0, 0, 255, 0.774);
+                    border: 1px solid blue;
+                }
+            }
+        }
+    }
+}
+
+.prayer-request {
+
+    .message-box {
+        width: 25%;
+        height: 17vh;
+        // background: red;
+        margin: 0 auto;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            color: white;
+            font-size: 18px;
+        }
+    }
+
+    hr {
+        padding-bottom: 20px;
+    }
+    .titl{
+        text-align: center;
+        font-family: 'Roboto';
+        font-weight: 200;
+        font-size: 45px;
+        padding: 25px;
+    }
+
+    .form {
+        padding: 25px;
+        width: 50%;
+        margin: 0 auto;
+
+        .name, .phone, .email, .message {
+            width: 100%;
+            h3{ 
+                font-family: 'Roboto';
+                font-weight: 200;
+                font-size: 22px;
+
+                span {
+                    color: red;
+                }
+            }
+
+            .input{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .inpt1, .inpt2 {
+                    display: flex;
+                    flex-direction:  column;
+                    padding: 20px 0px;
+                    width: 100%;
+
+                    input {
+                        height: 40px;
+                        width: 250px;
+                        border-radius: 4px;
+                        border: 1px solid rgb(54, 54, 54);
+                        margin-bottom: 8px;
+                    }
+
+                    small {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        .message {
+            margin-top: 25px;
+            .input {
+                .inpt1{
+                    textarea {
+                        border-radius: 4px;
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+
+        .send{
+            button {
+                height: 48px;
+                width: 130px;
+                background-color: rgb(45, 45, 253);
+                transition: all 0.5s ease-in-out;
+                cursor: pointer;
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: transparent;
+                    color: rgba(0, 0, 255, 0.774);
+                    border: 1px solid blue;
+                }
+            }
+        }
+    }
+
+}

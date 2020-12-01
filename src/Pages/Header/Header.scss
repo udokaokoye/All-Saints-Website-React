@@ -1,0 +1,25 @@
+.hd-header{
+    transition: all 0.5s ease-in-out;
+    background-color: white;
+    height: 12vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    .home-logo {
+        h1{
+            color: black;
+        }
+    }
+
+    .home-links .home-links-inner .home-link-default {
+        color: black;
+    }
+}
+
+.hd-trans{
+    transition: all 0.2s ease-in-out;
+    z-index: 1000;
+}

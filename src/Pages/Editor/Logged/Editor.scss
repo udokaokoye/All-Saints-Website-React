@@ -1,0 +1,537 @@
+.editor {
+    display: block;
+
+    .view_evt {
+        width: fit-content;
+        padding: 15px;
+        border: 1px solid red;
+        border-radius: 9px;
+        text-align: center;
+        margin-bottom: 25px;
+
+        &:focus {
+            outline: none;
+            transform: scale(1.1);
+        }
+
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(155, 155, 155);
+        height: 20vh;
+        color: white;
+
+        .logo {
+            h1 {
+                font-weight: 'Roboto';
+                font-weight: 200;
+                font-size: 39px;
+            }
+        }
+
+        .tabs {
+            // background-color: blue;
+            width: 60%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            .inner {
+                // background-color: red;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 50%;
+            
+            button {
+                padding: 15px;
+                border: 1px solid white;
+                border-radius: 9px;
+
+                &:focus {
+                    outline: none;
+                    transform: scale(1.1);
+                }
+
+            }
+
+            .logout {
+                background-color: rgb(235, 17, 17);
+                color: white;
+            }
+        }
+        }
+    }
+
+    .misc {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .title {
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 200;
+            padding: 25px;
+            font-size: 25px;
+        }
+
+        .message-box {
+            width: 25%;
+            height: 17vh;
+            // background: red;
+            margin: 0 auto;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                color: white;
+                font-size: 18px;
+            }
+        }
+
+        .form {
+            width: 80%;
+            // background-color: blue;
+            .inpt-div{
+                width: 100%;
+                h3{ 
+                    font-family: 'Roboto';
+                    font-weight: bold;
+                    font-size: 22px;
+    
+                    span {
+                        color: red;
+                    }
+                }
+    
+                .input{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+    
+                    .inpt1, .inpt2 {
+                        display: flex;
+                        flex-direction:  column;
+                        padding: 20px 0px;
+                        width: 100%;
+    
+                        input {
+                            height: 40px;
+                            width: 250px;
+                            border-radius: 4px;
+                            border: 1px solid rgb(54, 54, 54);
+                            margin-bottom: 8px;
+                            padding: 5px;
+                        }
+
+                        
+
+                        textarea {
+                            border-radius: 4px;
+                            margin-bottom: 8px;
+                            padding: 5px;
+                            font-family: 'Roboto';
+                            border: 1px solid rgb(54, 54, 54);
+                        }
+    
+                        small {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+
+            .submit{
+                padding: 25px 0px;
+                button {
+                    height: 48px;
+                    width: 130px;
+                    background-color: rgb(45, 45, 253);
+                    transition: all 0.5s ease-in-out;
+                    cursor: pointer;
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 5px;
+    
+                    &:hover {
+                        background-color: transparent;
+                        color: rgba(0, 0, 255, 0.774);
+                        border: 1px solid blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .event {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        // justify-content: center;
+        // align-items: center;
+        flex-direction: column;
+
+        .title {
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 200;
+            padding: 25px;
+            font-size: 25px;
+        }
+
+        .message-box {
+            width: 25%;
+            height: 17vh;
+            // background: red;
+            margin: 0 auto;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                color: white;
+                font-size: 18px;
+            }
+        }
+
+        .form {
+            width: 80%;
+            .inpt-div{
+                width: 100%;
+                h3{ 
+                    font-family: 'Roboto';
+                    font-weight: bold;
+                    font-size: 22px;
+    
+                    span {
+                        color: red;
+                    }
+                }
+    
+                .input{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+    
+                    .inpt1, .inpt2 {
+                        display: flex;
+                        flex-direction:  column;
+                        padding: 20px 0px;
+                        width: 100%;
+    
+                        input {
+                            height: 40px;
+                            width: 250px;
+                            border-radius: 4px;
+                            border: 1px solid rgb(54, 54, 54);
+                            margin-bottom: 8px;
+                            padding: 5px;
+                        }
+
+                        
+
+                        textarea {
+                            
+                            border-radius: 4px;
+                            margin-bottom: 8px;
+                            padding: 5px;
+                            font-family: 'Roboto';
+                            border: 1px solid rgb(54, 54, 54);
+                        }
+    
+                        small {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+
+            .submit{
+                padding: 25px 0px;
+                button {
+                    height: 48px;
+                    width: 130px;
+                    background-color: rgb(45, 45, 253);
+                    transition: all 0.5s ease-in-out;
+                    cursor: pointer;
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 5px;
+    
+                    &:hover {
+                        background-color: transparent;
+                        color: rgba(0, 0, 255, 0.774);
+                        border: 1px solid blue;
+                    }
+                }
+            }
+        }
+
+        .view_evt_div {
+            .message-box {
+                width: 25%;
+                height: 17vh;
+                // background: red;
+                margin: 0 auto;
+                border-radius: 9px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p {
+                    color: white;
+                    font-size: 18px;
+                }
+            }
+            .alr_evt {
+                margin: 15px;
+                padding: 15px;
+                position: relative;
+
+                h1{
+                    font-family: 'Roboto';
+                    font-weight: 200;
+                    padding-bottom: 10px;
+                }
+
+                p {
+                    padding-bottom: 10px;
+                }
+
+                .del_but {
+                    position: absolute;
+                    right: 0;
+                    bottom: 5%;
+                    button {
+                        margin: 10px;
+                        padding: 20px 25px;
+                        border-radius: 9px;
+                        border: 1px solid white;
+                        background-color: red;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .dss {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .title {
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 200;
+            padding: 25px;
+            font-size: 25px;
+        }
+
+        .message-box {
+            width: 25%;
+            height: 17vh;
+            // background: red;
+            margin: 0 auto;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                color: white;
+                font-size: 18px;
+            }
+        }
+
+        .form {
+            width: 80%;
+
+            .inpt-div{
+                width: 100%;
+                h3{ 
+                    font-family: 'Roboto';
+                    font-weight: bold;
+                    font-size: 22px;
+                    padding: 10px 0;
+    
+                    span {
+                        color: red;
+                    }
+                }
+    
+                .input{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+    
+                    .inpt1, .inpt2 {
+                        display: flex;
+                        flex-direction:  column;
+                        padding: 20px 0px;
+                        width: 100%;
+    
+                        input {
+                            height: 40px;
+                            width: 250px;
+                            border-radius: 4px;
+                            border: 1px solid rgb(54, 54, 54);
+                            margin-bottom: 8px;
+                            padding: 5px;
+                        }
+
+                        
+
+                        textarea {
+                            border-radius: 4px;
+                            margin-bottom: 8px;
+                            padding: 5px;
+                            font-family: 'Roboto';
+                            border: 1px solid rgb(54, 54, 54);
+                        }
+    
+                        small {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+
+            .submit{
+                padding: 25px 0px;
+                button {
+                    height: 48px;
+                    width: 130px;
+                    background-color: rgb(45, 45, 253);
+                    transition: all 0.5s ease-in-out;
+                    cursor: pointer;
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 5px;
+    
+                    &:hover {
+                        background-color: transparent;
+                        color: rgba(0, 0, 255, 0.774);
+                        border: 1px solid blue;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .add_editor {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .title {
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 200;
+            padding: 25px;
+            font-size: 25px;
+        }
+
+        .message-box {
+            width: 25%;
+            height: 17vh;
+            // background: red;
+            margin: 0 auto;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                color: white;
+                font-size: 18px;
+            }
+        }
+
+        .form {
+            width: 80%;
+
+            .inpt-div{
+                width: 100%;
+                h3{ 
+                    font-family: 'Roboto';
+                    font-weight: bold;
+                    font-size: 22px;
+                    padding: 10px 0;
+    
+                    span {
+                        color: red;
+                    }
+                }
+    
+                .input{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+    
+                    .inpt1, .inpt2 {
+                        display: flex;
+                        flex-direction:  column;
+                        padding: 20px 0px;
+                        width: 100%;
+    
+                        input {
+                            height: 40px;
+                            width: 250px;
+                            border-radius: 4px;
+                            border: 1px solid rgb(54, 54, 54);
+                            margin-bottom: 8px;
+                            padding: 5px;
+                        }
+
+                        
+
+                        textarea {
+                            border-radius: 4px;
+                            margin-bottom: 8px;
+                            padding: 5px;
+                            font-family: 'Roboto';
+                            border: 1px solid rgb(54, 54, 54);
+                        }
+    
+                        small {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+
+            .submit{
+                padding: 25px 0px;
+                button {
+                    height: 48px;
+                    width: 130px;
+                    background-color: rgb(45, 45, 253);
+                    transition: all 0.5s ease-in-out;
+                    cursor: pointer;
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 5px;
+    
+                    &:hover {
+                        background-color: transparent;
+                        color: rgba(0, 0, 255, 0.774);
+                        border: 1px solid blue;
+                    }
+                }
+            }
+        }
+
+    }
+}

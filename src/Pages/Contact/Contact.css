@@ -1,0 +1,302 @@
+.contact {
+  margin-top: 12vh;
+}
+
+.cnt-tp {
+  height: 20vh;
+  width: 100%;
+  background-color: rgba(0, 0, 255, 0.808);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cnt-tp h1 {
+  font-size: 50px;
+  font-family: 'Roboto';
+  font-weight: 200;
+}
+
+.cnt-inf {
+  margin-top: 20px;
+  width: 100%;
+  height: 35vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cnt-inf .map {
+  width: 50%;
+  height: 100%;
+  background: transparent;
+}
+
+.cnt-inf .address {
+  width: 50%;
+  height: 100%;
+}
+
+.cnt-inf .address h1 {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 31px;
+  padding: 0px 20px;
+}
+
+.cnt-inf .address span {
+  font-family: 'Roboto';
+  padding: 1px 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.cnt-inf .address p {
+  padding: 15px 20px;
+}
+
+.cnt-inf .address .sml-txt {
+  padding-left: 20px;
+}
+
+.contact-form {
+  width: 100%;
+  height: auto;
+}
+
+.contact-form hr {
+  padding-bottom: 25px;
+}
+
+.contact-form .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-form .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.contact-form .titl {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+  font-size: 45px;
+  padding: 25px;
+}
+
+.contact-form .form {
+  padding: 25px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.contact-form .form .name, .contact-form .form .phone, .contact-form .form .email, .contact-form .form .message {
+  width: 100%;
+}
+
+.contact-form .form .name h3, .contact-form .form .phone h3, .contact-form .form .email h3, .contact-form .form .message h3 {
+  font-family: 'Roboto';
+  font-weight: 200;
+  font-size: 22px;
+}
+
+.contact-form .form .name h3 span, .contact-form .form .phone h3 span, .contact-form .form .email h3 span, .contact-form .form .message h3 span {
+  color: red;
+}
+
+.contact-form .form .name .input, .contact-form .form .phone .input, .contact-form .form .email .input, .contact-form .form .message .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.contact-form .form .name .input .inpt1, .contact-form .form .name .input .inpt2, .contact-form .form .phone .input .inpt1, .contact-form .form .phone .input .inpt2, .contact-form .form .email .input .inpt1, .contact-form .form .email .input .inpt2, .contact-form .form .message .input .inpt1, .contact-form .form .message .input .inpt2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.contact-form .form .name .input .inpt1 input, .contact-form .form .name .input .inpt2 input, .contact-form .form .phone .input .inpt1 input, .contact-form .form .phone .input .inpt2 input, .contact-form .form .email .input .inpt1 input, .contact-form .form .email .input .inpt2 input, .contact-form .form .message .input .inpt1 input, .contact-form .form .message .input .inpt2 input {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  margin-bottom: 8px;
+}
+
+.contact-form .form .name .input .inpt1 small, .contact-form .form .name .input .inpt2 small, .contact-form .form .phone .input .inpt1 small, .contact-form .form .phone .input .inpt2 small, .contact-form .form .email .input .inpt1 small, .contact-form .form .email .input .inpt2 small, .contact-form .form .message .input .inpt1 small, .contact-form .form .message .input .inpt2 small {
+  opacity: 0.7;
+}
+
+.contact-form .form .message .input .inpt1 textarea {
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.contact-form .form .submit button {
+  height: 48px;
+  width: 130px;
+  background-color: #2d2dfd;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.contact-form .form .submit button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.774);
+  border: 1px solid blue;
+}
+
+.prayer-request .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prayer-request .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.prayer-request hr {
+  padding-bottom: 20px;
+}
+
+.prayer-request .titl {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+  font-size: 45px;
+  padding: 25px;
+}
+
+.prayer-request .form {
+  padding: 25px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.prayer-request .form .name, .prayer-request .form .phone, .prayer-request .form .email, .prayer-request .form .message {
+  width: 100%;
+}
+
+.prayer-request .form .name h3, .prayer-request .form .phone h3, .prayer-request .form .email h3, .prayer-request .form .message h3 {
+  font-family: 'Roboto';
+  font-weight: 200;
+  font-size: 22px;
+}
+
+.prayer-request .form .name h3 span, .prayer-request .form .phone h3 span, .prayer-request .form .email h3 span, .prayer-request .form .message h3 span {
+  color: red;
+}
+
+.prayer-request .form .name .input, .prayer-request .form .phone .input, .prayer-request .form .email .input, .prayer-request .form .message .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.prayer-request .form .name .input .inpt1, .prayer-request .form .name .input .inpt2, .prayer-request .form .phone .input .inpt1, .prayer-request .form .phone .input .inpt2, .prayer-request .form .email .input .inpt1, .prayer-request .form .email .input .inpt2, .prayer-request .form .message .input .inpt1, .prayer-request .form .message .input .inpt2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.prayer-request .form .name .input .inpt1 input, .prayer-request .form .name .input .inpt2 input, .prayer-request .form .phone .input .inpt1 input, .prayer-request .form .phone .input .inpt2 input, .prayer-request .form .email .input .inpt1 input, .prayer-request .form .email .input .inpt2 input, .prayer-request .form .message .input .inpt1 input, .prayer-request .form .message .input .inpt2 input {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  margin-bottom: 8px;
+}
+
+.prayer-request .form .name .input .inpt1 small, .prayer-request .form .name .input .inpt2 small, .prayer-request .form .phone .input .inpt1 small, .prayer-request .form .phone .input .inpt2 small, .prayer-request .form .email .input .inpt1 small, .prayer-request .form .email .input .inpt2 small, .prayer-request .form .message .input .inpt1 small, .prayer-request .form .message .input .inpt2 small {
+  opacity: 0.7;
+}
+
+.prayer-request .form .message {
+  margin-top: 25px;
+}
+
+.prayer-request .form .message .input .inpt1 textarea {
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.prayer-request .form .send button {
+  height: 48px;
+  width: 130px;
+  background-color: #2d2dfd;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.prayer-request .form .send button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.774);
+  border: 1px solid blue;
+}
+/*# sourceMappingURL=Contact.css.map */

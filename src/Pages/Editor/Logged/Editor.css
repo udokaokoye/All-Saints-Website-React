@@ -1,0 +1,652 @@
+.editor {
+  display: block;
+}
+
+.editor .view_evt {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 15px;
+  border: 1px solid red;
+  border-radius: 9px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.editor .view_evt:focus {
+  outline: none;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.editor .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #9b9b9b;
+  height: 20vh;
+  color: white;
+}
+
+.editor .nav .logo h1 {
+  font-weight: 'Roboto';
+  font-weight: 200;
+  font-size: 39px;
+}
+
+.editor .nav .tabs {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.editor .nav .tabs .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.editor .nav .tabs .inner button {
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 9px;
+}
+
+.editor .nav .tabs .inner button:focus {
+  outline: none;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.editor .nav .tabs .inner .logout {
+  background-color: #eb1111;
+  color: white;
+}
+
+.editor .misc {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.editor .misc .title {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+  padding: 25px;
+  font-size: 25px;
+}
+
+.editor .misc .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editor .misc .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.editor .misc .form {
+  width: 80%;
+}
+
+.editor .misc .form .inpt-div {
+  width: 100%;
+}
+
+.editor .misc .form .inpt-div h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.editor .misc .form .inpt-div h3 span {
+  color: red;
+}
+
+.editor .misc .form .inpt-div .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.editor .misc .form .inpt-div .input .inpt1, .editor .misc .form .inpt-div .input .inpt2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.editor .misc .form .inpt-div .input .inpt1 input, .editor .misc .form .inpt-div .input .inpt2 input {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.editor .misc .form .inpt-div .input .inpt1 textarea, .editor .misc .form .inpt-div .input .inpt2 textarea {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 5px;
+  font-family: 'Roboto';
+  border: 1px solid #363636;
+}
+
+.editor .misc .form .inpt-div .input .inpt1 small, .editor .misc .form .inpt-div .input .inpt2 small {
+  opacity: 0.7;
+}
+
+.editor .misc .form .submit {
+  padding: 25px 0px;
+}
+
+.editor .misc .form .submit button {
+  height: 48px;
+  width: 130px;
+  background-color: #2d2dfd;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.editor .misc .form .submit button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.774);
+  border: 1px solid blue;
+}
+
+.editor .event {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.editor .event .title {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+  padding: 25px;
+  font-size: 25px;
+}
+
+.editor .event .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editor .event .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.editor .event .form {
+  width: 80%;
+}
+
+.editor .event .form .inpt-div {
+  width: 100%;
+}
+
+.editor .event .form .inpt-div h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.editor .event .form .inpt-div h3 span {
+  color: red;
+}
+
+.editor .event .form .inpt-div .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.editor .event .form .inpt-div .input .inpt1, .editor .event .form .inpt-div .input .inpt2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.editor .event .form .inpt-div .input .inpt1 input, .editor .event .form .inpt-div .input .inpt2 input {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.editor .event .form .inpt-div .input .inpt1 textarea, .editor .event .form .inpt-div .input .inpt2 textarea {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 5px;
+  font-family: 'Roboto';
+  border: 1px solid #363636;
+}
+
+.editor .event .form .inpt-div .input .inpt1 small, .editor .event .form .inpt-div .input .inpt2 small {
+  opacity: 0.7;
+}
+
+.editor .event .form .submit {
+  padding: 25px 0px;
+}
+
+.editor .event .form .submit button {
+  height: 48px;
+  width: 130px;
+  background-color: #2d2dfd;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.editor .event .form .submit button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.774);
+  border: 1px solid blue;
+}
+
+.editor .event .view_evt_div .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editor .event .view_evt_div .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.editor .event .view_evt_div .alr_evt {
+  margin: 15px;
+  padding: 15px;
+  position: relative;
+}
+
+.editor .event .view_evt_div .alr_evt h1 {
+  font-family: 'Roboto';
+  font-weight: 200;
+  padding-bottom: 10px;
+}
+
+.editor .event .view_evt_div .alr_evt p {
+  padding-bottom: 10px;
+}
+
+.editor .event .view_evt_div .alr_evt .del_but {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+}
+
+.editor .event .view_evt_div .alr_evt .del_but button {
+  margin: 10px;
+  padding: 20px 25px;
+  border-radius: 9px;
+  border: 1px solid white;
+  background-color: red;
+  color: white;
+}
+
+.editor .dss {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.editor .dss .title {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+  padding: 25px;
+  font-size: 25px;
+}
+
+.editor .dss .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editor .dss .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.editor .dss .form {
+  width: 80%;
+}
+
+.editor .dss .form .inpt-div {
+  width: 100%;
+}
+
+.editor .dss .form .inpt-div h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.editor .dss .form .inpt-div h3 span {
+  color: red;
+}
+
+.editor .dss .form .inpt-div .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.editor .dss .form .inpt-div .input .inpt1, .editor .dss .form .inpt-div .input .inpt2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.editor .dss .form .inpt-div .input .inpt1 input, .editor .dss .form .inpt-div .input .inpt2 input {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.editor .dss .form .inpt-div .input .inpt1 textarea, .editor .dss .form .inpt-div .input .inpt2 textarea {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 5px;
+  font-family: 'Roboto';
+  border: 1px solid #363636;
+}
+
+.editor .dss .form .inpt-div .input .inpt1 small, .editor .dss .form .inpt-div .input .inpt2 small {
+  opacity: 0.7;
+}
+
+.editor .dss .form .submit {
+  padding: 25px 0px;
+}
+
+.editor .dss .form .submit button {
+  height: 48px;
+  width: 130px;
+  background-color: #2d2dfd;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.editor .dss .form .submit button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.774);
+  border: 1px solid blue;
+}
+
+.editor .add_editor {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.editor .add_editor .title {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+  padding: 25px;
+  font-size: 25px;
+}
+
+.editor .add_editor .message-box {
+  width: 25%;
+  height: 17vh;
+  margin: 0 auto;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editor .add_editor .message-box p {
+  color: white;
+  font-size: 18px;
+}
+
+.editor .add_editor .form {
+  width: 80%;
+}
+
+.editor .add_editor .form .inpt-div {
+  width: 100%;
+}
+
+.editor .add_editor .form .inpt-div h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.editor .add_editor .form .inpt-div h3 span {
+  color: red;
+}
+
+.editor .add_editor .form .inpt-div .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.editor .add_editor .form .inpt-div .input .inpt1, .editor .add_editor .form .inpt-div .input .inpt2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.editor .add_editor .form .inpt-div .input .inpt1 input, .editor .add_editor .form .inpt-div .input .inpt2 input {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #363636;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.editor .add_editor .form .inpt-div .input .inpt1 textarea, .editor .add_editor .form .inpt-div .input .inpt2 textarea {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 5px;
+  font-family: 'Roboto';
+  border: 1px solid #363636;
+}
+
+.editor .add_editor .form .inpt-div .input .inpt1 small, .editor .add_editor .form .inpt-div .input .inpt2 small {
+  opacity: 0.7;
+}
+
+.editor .add_editor .form .submit {
+  padding: 25px 0px;
+}
+
+.editor .add_editor .form .submit button {
+  height: 48px;
+  width: 130px;
+  background-color: #2d2dfd;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.editor .add_editor .form .submit button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.774);
+  border: 1px solid blue;
+}
+/*# sourceMappingURL=Editor.css.map */

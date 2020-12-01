@@ -1,0 +1,12 @@
+Itim (Bible)
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+</style>
+font-family: 'Itim', cursive;
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+</style>
+
+
+font-family: 'Roboto', sans-serif;

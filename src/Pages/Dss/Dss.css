@@ -1,0 +1,33 @@
+.dss {
+  margin-top: 12vh;
+  width: 55%;
+}
+
+.dss .dss-tit {
+  text-align: center;
+  padding: 15px;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+.dss h3 {
+  text-align: left;
+  font-family: 'Roboto';
+  font-weight: 500;
+  padding: 15px;
+}
+
+.dss p {
+  text-align: left;
+  line-height: 35px;
+  font-size: 18px;
+  padding: 15px;
+}
+
+.dss .pubs {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Rubik';
+}
+/*# sourceMappingURL=Dss.css.map */

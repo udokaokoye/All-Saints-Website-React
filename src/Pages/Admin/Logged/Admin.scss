@@ -1,0 +1,437 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(155, 155, 155);
+    height: 20vh;
+    color: white;
+
+    .logo {
+        h1 {
+            font-weight: 'Roboto';
+            font-weight: 200;
+            font-size: 39px;
+        }
+    }
+
+    .tabs {
+        // background-color: blue;
+        width: 60%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        .inner {
+            // background-color: red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 50%;
+        
+        button {
+            padding: 15px;
+            border: 1px solid white;
+            border-radius: 9px;
+
+            &:focus {
+                outline: none;
+                transform: scale(1.1);
+            }
+
+        }
+
+        .logout {
+            background-color: rgb(235, 17, 17);
+            color: white;
+        }
+    }
+    }
+}
+
+.cnt {
+    .title {
+        font-family: 'Roboto';
+        font-weight: 200;
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .content {
+        width: 75%;
+        margin: 0 auto;
+        h3 {
+            font-family: 'Roboto';
+            font-weight: 200;
+            font-size: 29px;
+            padding-bottom: 25px;
+        }
+
+        .cnt_main {
+            border: 1px solid rgb(134, 134, 134);
+            width: 50%;
+            height: auto;
+            margin-left: 15px;
+            margin-bottom: 20px;
+            border-radius: 9px;
+            padding: 10px;
+
+            h1 {
+                font-family: 'Roboto';
+                font-weight: 200;
+            }
+            p {
+                opacity: 0.5;
+                padding: 5px;
+            }
+            hr {
+                opacity: 0.5;
+                margin: 10px 0;
+            }
+
+            .cnt_msg {
+                opacity: 1;
+                line-height: 28px;
+            }
+
+            .bar { 
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .act_bt {
+                    width: 20%;
+                    height: 100%;
+                   button {
+                       background: red;
+                       border: 1px solid white;
+                       color: white;
+                       width: 100%;
+                       padding: 10px;
+                       border-radius: 5px;
+                       transition: all 0.5s ease;
+
+                       &:hover {
+                           transform: scale(1.05);
+                       }
+                   }
+                }
+            }
+        }
+    }
+}
+
+.prayer_req {
+    .title {
+        font-family: 'Roboto';
+        font-weight: 200;
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .content {
+        width: 75%;
+        margin: 0 auto;
+        h3 {
+            font-family: 'Roboto';
+            font-weight: 200;
+            font-size: 29px;
+            padding-bottom: 25px;
+        }
+
+        .cnt_main {
+            border: 1px solid rgb(134, 134, 134);
+            width: 50%;
+            height: auto;
+            margin-left: 15px;
+            margin-bottom: 20px;
+            border-radius: 9px;
+            padding: 10px;
+
+            h1 {
+                font-family: 'Roboto';
+                font-weight: 200;
+            }
+            p {
+                opacity: 0.5;
+                padding: 5px;
+            }
+            hr {
+                opacity: 0.5;
+                margin: 10px 0;
+            }
+
+            .cnt_msg {
+                opacity: 1;
+                line-height: 28px;
+            }
+
+            .bar { 
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .act_bt {
+                    width: 20%;
+                    height: 100%;
+                   button {
+                       background: red;
+                       border: 1px solid white;
+                       color: white;
+                       width: 100%;
+                       padding: 10px;
+                       border-radius: 5px;
+                       transition: all 0.5s ease;
+
+                       &:hover {
+                           transform: scale(1.05);
+                       }
+                   }
+                }
+            }
+        }
+    }
+}
+.add_admin {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        text-align: center;
+        font-family: 'Roboto';
+        font-weight: 200;
+        padding: 25px;
+        font-size: 25px;
+    }
+
+    .message-box {
+        width: 25%;
+        height: 17vh;
+        // background: red;
+        margin: 0 auto;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p {
+            color: white;
+            font-size: 18px;
+        }
+    }
+
+    .message-box {
+        width: 25%;
+        height: 17vh;
+        // background: red;
+        margin: 0 auto;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            color: white;
+            font-size: 18px;
+        }
+    }
+
+    .form {
+        width: 80%;
+
+        .inpt-div{
+            width: 100%;
+            h3{ 
+                font-family: 'Roboto';
+                font-weight: bold;
+                font-size: 22px;
+                padding: 10px 0;
+
+                span {
+                    color: red;
+                }
+            }
+
+            .input{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .inpt1, .inpt2 {
+                    display: flex;
+                    flex-direction:  column;
+                    padding: 20px 0px;
+                    width: 100%;
+
+                    input {
+                        height: 40px;
+                        width: 250px;
+                        border-radius: 4px;
+                        border: 1px solid rgb(54, 54, 54);
+                        margin-bottom: 8px;
+                        padding: 5px;
+                    }
+
+                    
+
+                    textarea {
+                        border-radius: 4px;
+                        margin-bottom: 8px;
+                        padding: 5px;
+                        font-family: 'Roboto';
+                        border: 1px solid rgb(54, 54, 54);
+                    }
+
+                    small {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        .submit{
+            padding: 25px 0px;
+            button {
+                height: 48px;
+                width: 130px;
+                background-color: rgb(45, 45, 253);
+                transition: all 0.5s ease-in-out;
+                cursor: pointer;
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: transparent;
+                    color: rgba(0, 0, 255, 0.774);
+                    border: 1px solid blue;
+                }
+            }
+        }
+    }
+
+}
+
+.add_editor {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        text-align: center;
+        font-family: 'Roboto';
+        font-weight: 200;
+        padding: 25px;
+        font-size: 25px;
+    }
+
+    .message-box {
+        width: 25%;
+        height: 17vh;
+        // background: red;
+        margin: 0 auto;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p {
+            color: white;
+            font-size: 18px;
+        }
+    }
+
+    .message-box {
+        width: 25%;
+        height: 17vh;
+        // background: red;
+        margin: 0 auto;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            color: white;
+            font-size: 18px;
+        }
+    }
+
+    .form {
+        width: 80%;
+
+        .inpt-div{
+            width: 100%;
+            h3{ 
+                font-family: 'Roboto';
+                font-weight: bold;
+                font-size: 22px;
+                padding: 10px 0;
+
+                span {
+                    color: red;
+                }
+            }
+
+            .input{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .inpt1, .inpt2 {
+                    display: flex;
+                    flex-direction:  column;
+                    padding: 20px 0px;
+                    width: 100%;
+
+                    input {
+                        height: 40px;
+                        width: 250px;
+                        border-radius: 4px;
+                        border: 1px solid rgb(54, 54, 54);
+                        margin-bottom: 8px;
+                        padding: 5px;
+                    }
+
+                    
+
+                    textarea {
+                        border-radius: 4px;
+                        margin-bottom: 8px;
+                        padding: 5px;
+                        font-family: 'Roboto';
+                        border: 1px solid rgb(54, 54, 54);
+                    }
+
+                    small {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        .submit{
+            padding: 25px 0px;
+            button {
+                height: 48px;
+                width: 130px;
+                background-color: rgb(45, 45, 253);
+                transition: all 0.5s ease-in-out;
+                cursor: pointer;
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: transparent;
+                    color: rgba(0, 0, 255, 0.774);
+                    border: 1px solid blue;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,32 @@
+.hd-header {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+  height: 12vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.hd-header .home-logo h1 {
+  color: black;
+}
+
+.hd-header .home-links .home-links-inner .home-link-default {
+  color: black;
+}
+
+.hd-trans {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  z-index: 1000;
+}
+/*# sourceMappingURL=Header.css.map */

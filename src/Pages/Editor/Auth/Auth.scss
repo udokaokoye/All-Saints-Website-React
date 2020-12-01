@@ -1,0 +1,91 @@
+.auth {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .top-txt{
+        font-family: 'Roboto';
+        margin-bottom: 20px;
+        font-size: 28px;
+        font-weight: 200;
+    }
+
+    h5 {
+        font-family: 'Roboto';
+        margin-bottom: 20px;
+        font-weight: 200;
+    }
+
+    .form-login {
+        width: 30%;
+        height: 70%;
+
+        .form {
+            .name, .password, .email, .message {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                h3{ 
+                    font-family: 'Roboto';
+                    font-weight: 200;
+                    font-size: 22px;
+    
+                    span {
+                        color: red;
+                    }
+                }
+    
+                .input{
+                    width: 100%;
+    
+                    .inpt1, .inpt2 {
+                        display: flex;
+                        flex-direction:  column;
+                        align-items: center;
+                        padding: 20px 0px;
+                        width: 100%;
+    
+                        input {
+                            height: 40px;
+                            width: 250px;
+                            border-radius: 4px;
+                            border: 1px solid rgb(54, 54, 54);
+                            margin-bottom: 8px;
+                            padding: 5px;
+                        }
+    
+                        small {
+                            opacity: 0.7;
+                            color: red;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            .submit{
+                button {
+                    height: 48px;
+                    width: 130px;
+                    background-color: rgb(45, 45, 253);
+                    transition: all 0.5s ease-in-out;
+                    cursor: pointer;
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 5px;
+    
+                    &:hover {
+                        background-color: transparent;
+                        color: rgba(0, 0, 255, 0.774);
+                        border: 1px solid blue;
+                    }
+                }
+            }
+        }
+    }
+}
