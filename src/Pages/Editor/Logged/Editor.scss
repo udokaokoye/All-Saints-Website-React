@@ -560,7 +560,12 @@
                     border: 1px solid white;
                     color: white;
                     padding: 8px 8px;
+                    cursor: pointer;
 
+                }
+
+                .like {
+                    background-color: rgb(37, 37, 201);
                 }
             }
         }

@@ -29,6 +29,7 @@ const Admin = () => {
 
   const [all_edt, setall_edt] = useState([]);
   const [all_adm, setall_adm] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
   useEffect(() => {
     verify();
     fetchContact();
@@ -38,6 +39,7 @@ const Admin = () => {
   }, []);
 
   const verify = () => {
+    setisLoading(true);
     if (cookies.admin) {
       const url =
         "http://localhost/All%20Saints%20Backend/verify.php?mode=admin";
@@ -50,20 +52,27 @@ const Admin = () => {
       })
         .then((response) => response.json())
         .then((res) => {
+          setisLoading(false);
           console.log(res);
           if (res != "SUCCESS") {
             history.push("/admin/auth");
           }
         })
         .catch((err) => console.log(err));
+    } else {
+      history.push("/admin/auth");
     }
+    setisLoading(false);
   };
   const Logout = () => {
+    setisLoading(true);
     removeCookie("admin", { path: "/" });
+    setisLoading(false);
     history.push("/admin/auth");
   };
 
   const fetchContact = () => {
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/fetch_contact.php";
 
     fetch(url, {
@@ -73,11 +82,13 @@ const Admin = () => {
       .then((res) => {
         // console.log(res)
         setcnt_fetch(res);
+        setisLoading(false);
       })
       .catch((err) => console.log(err));
   };
 
   const fetchPrayerRequest = () => {
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/fetch_prayer.php";
 
     fetch(url, {
@@ -85,15 +96,17 @@ const Admin = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        // console.log(res)
+        setisLoading(false);
         setpry_fetch(res);
       })
       .catch((err) => console.log(err));
   };
 
   const deleteFuc = (table, id) => {
+    setisLoading(true);
     const isDel = window.confirm("Are you sure you want to delete?");
     if (isDel === false) {
+      setisLoading(false);
       return;
     }
     const url = `http://localhost/All%20Saints%20Backend/delete.php?table=${table}`;
@@ -108,7 +121,7 @@ const Admin = () => {
       .then((res) => {
         fetchPrayerRequest();
         fetchContact();
-        console.log(res);
+        setisLoading(false);
       })
       .catch((err) => console.log(err));
   };
@@ -134,6 +147,7 @@ const Admin = () => {
       setmessagebox([true, "Password does not match", "red"]);
       return;
     }
+    setisLoading(true);
     const url = `http://localhost/All%20Saints%20Backend/add_user.php?user=editor`;
 
     const formData = new FormData();
@@ -147,7 +161,7 @@ const Admin = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log(res);
+        setisLoading(false);
 
         if (res === "SUCCESS") {
           setmessagebox([true, "Editor Added", "green"]);
@@ -177,6 +191,7 @@ const Admin = () => {
       setmessagebox([true, "Password does not match", "red"]);
       return;
     }
+    setisLoading(true);
     const url = `http://localhost/All%20Saints%20Backend/add_user.php?user=admin`;
 
     const formData = new FormData();
@@ -190,7 +205,7 @@ const Admin = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log(res);
+        setisLoading(false);
 
         if (res === "SUCCESS") {
           setmessagebox([true, "Admin Added", "green"]);
@@ -200,6 +215,7 @@ const Admin = () => {
   };
 
   const fetchEditor = () => {
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/user.php?qr=editor";
 
     fetch(url, {
@@ -207,13 +223,14 @@ const Admin = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        // console.log(res);
+        setisLoading(false);
         setall_edt(res);
       })
       .catch((err) => console.log(err));
   };
 
   const fetchAdmin = () => {
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/user.php?qr=admin";
 
     fetch(url, {
@@ -221,15 +238,17 @@ const Admin = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        // console.log(res);
+        setisLoading(false);
         setall_adm(res);
       })
       .catch((err) => console.log(err));
   };
 
   const delUser = (table, id) => {
+    setisLoading(true);
     const isDel = window.confirm("Are you sure you want to delete?");
     if (isDel === false) {
+      setisLoading(false);
       return;
     }
     const url = `http://localhost/All%20Saints%20Backend/user.php?del=${table}`;
@@ -244,9 +263,27 @@ const Admin = () => {
       .then((res) => {
         fetchEditor();
         fetchAdmin();
+        setisLoading(false);
       })
       .catch((err) => console.log(err));
   };
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#F1F2F3",
+        }}
+      >
+        <img width="8%" src={require("../../../assets/loader1.gif")} alt="" />
+      </div>
+    );
+  }
   return (
     <div className="Admin">
       <div className="nav">

@@ -679,5 +679,10 @@
   border: 1px solid white;
   color: white;
   padding: 8px 8px;
+  cursor: pointer;
+}
+
+.editor .chats .content .main_content .like {
+  background-color: #2525c9;
 }
 /*# sourceMappingURL=Editor.css.map */

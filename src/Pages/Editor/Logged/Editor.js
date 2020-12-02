@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import "./Editor.css";
 import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 const Editor = () => {
   const [misc, setmisc] = useState(true);
   const [evt, setevt] = useState(false);
@@ -41,7 +43,7 @@ const Editor = () => {
   const [misc_fetch, setmisc_fetch] = useState([]);
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const history = useHistory();
-
+  const [isLoading, setisLoading] = useState(false);
   useEffect(() => {
     verify();
     fetchMisc();
@@ -56,6 +58,7 @@ const Editor = () => {
   };
 
   const verify = () => {
+    setisLoading(true);
     if (cookies.user) {
       const url =
         "http://localhost/All%20Saints%20Backend/verify.php?mode=already_logged";
@@ -68,6 +71,7 @@ const Editor = () => {
       })
         .then((response) => response.json())
         .then((res) => {
+          setisLoading(false);
           if (res === "SUCCESS") {
             return;
           } else {
@@ -76,6 +80,7 @@ const Editor = () => {
         })
         .catch((err) => console.log(err));
     } else {
+      setisLoading(false);
       history.push("/editor/auth");
     }
   };
@@ -90,7 +95,7 @@ const Editor = () => {
     formData.append("cnt_phone", cnt_phn);
     formData.append("cnt_email", cnt_email);
     formData.append("live_service", live_service);
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/misc.php";
     fetch(url, {
       method: "POST",
@@ -98,6 +103,7 @@ const Editor = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         if (res === "SUCCESS") {
           window.scroll({
             top: 0,
@@ -140,7 +146,7 @@ const Editor = () => {
     formData.append("evt_title", evt_title);
     formData.append("evt_date", evt_date);
     formData.append("evt_time", evt_time);
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/event.php?mode=upl";
     fetch(url, {
       method: "POST",
@@ -148,6 +154,7 @@ const Editor = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         if (res === "SUCCESS") {
           setmessagebox([true, "Event Added", "green"]);
           fetchEvents();
@@ -175,7 +182,7 @@ const Editor = () => {
     const formData = new FormData();
     formData.append("dss_date", dss_date);
     formData.append("dss_content", dss_content);
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/dss.php?mode=upl";
     fetch(url, {
       method: "POST",
@@ -183,6 +190,7 @@ const Editor = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         if (res === "SUCCESS") {
           setmessagebox([true, "Dss Uploaded", "green"]);
         }
@@ -194,7 +202,7 @@ const Editor = () => {
 
   const fetchMisc = () => {
     const formData = new FormData();
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
@@ -209,17 +217,20 @@ const Editor = () => {
         setcnt_phn(res["cnt_phone"]);
         setcnt_email(res["cnt_email"]);
         setlive_service(res["live_service"]);
+        setisLoading(false);
       })
       .catch((err) => console.log(err));
   };
 
   const fetchEvents = () => {
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/event.php?mode=dwl";
     fetch(url, {
       method: "POST",
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         setevents(res);
         console.log(res);
       })
@@ -229,6 +240,7 @@ const Editor = () => {
   const deleteEvent = (id) => {
     const formData = new FormData();
     formData.append("id", id);
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/event.php?mode=del";
     fetch(url, {
       method: "POST",
@@ -236,6 +248,7 @@ const Editor = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         fetchEvents();
         if (res === "SUCCESS") {
           setevt_msg([true, "Deleted Event", "green"]);
@@ -247,21 +260,24 @@ const Editor = () => {
   };
 
   const fetchChat = () => {
+    // setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/chat.php?qr=dwl-ord";
     fetch(url, {
       method: "POST",
     })
       .then((response) => response.json())
       .then((res) => {
-        // console.log(res);
+        setisLoading(false);
         setfetch_chat(res);
       })
       .catch((err) => console.log(err));
   };
 
   const deleteFuc = (table, id) => {
+    setisLoading(true);
     const isDel = window.confirm("Are you sure you want to delete?");
     if (isDel === false) {
+      setisLoading(false);
       return;
     }
     const url = `http://localhost/All%20Saints%20Backend/delete.php?table=${table}`;
@@ -274,6 +290,7 @@ const Editor = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         fetchChat();
       })
       .catch((err) => console.log(err));
@@ -284,6 +301,38 @@ const Editor = () => {
     setTimeout(reFetchChats, 5000);
   };
 
+  const likeChat = (id) => {
+    const url = `http://localhost/All%20Saints%20Backend/like.php?mode=upl`;
+
+    const formData = new FormData();
+    formData.append("chat_id", id);
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#F1F2F3",
+        }}
+      >
+        <img width="8%" src={require("../../../assets/loader1.gif")} alt="" />
+      </div>
+    );
+  }
   return (
     <div className="editor">
       <div className="nav">
@@ -626,6 +675,18 @@ const Editor = () => {
                   <p>{chat_info.message}</p>
                   <button onClick={() => deleteFuc("chat", chat_info.id)}>
                     Delete
+                  </button>
+                  <button
+                    onClick={() => likeChat(chat_info.id)}
+                    className="like"
+                  >
+                    Like{" "}
+                    <FontAwesomeIcon
+                      color="white"
+                      className="snd"
+                      style={{ cursor: "pointer" }}
+                      icon={faThumbsUp}
+                    />
                   </button>
                 </div>
               );

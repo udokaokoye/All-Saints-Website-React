@@ -6,12 +6,14 @@ import { faAngleDown, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import "./Events.css";
 const Events = () => {
   const [events, setevents] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
   useEffect(() => {
     fetchEvents();
     console.log(moment().format("MMM do"));
   }, []);
 
   const fetchEvents = () => {
+    setisLoading(true);
     const url =
       "http://localhost/All%20Saints%20Backend/event.php?mode=dwl-ord";
     fetch(url, {
@@ -19,14 +21,30 @@ const Events = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        // console.log(res[0][0])
-        // console.log(res[0][0][0])
+        setisLoading(false);
         setevents(res);
         // console.log(res);
         console.log(res.slice(0, 1));
       })
       .catch((err) => console.log(err));
   };
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#F1F2F3",
+        }}
+      >
+        <img width="8%" src={require("../../assets/loader1.gif")} alt="" />
+      </div>
+    );
+  }
   return (
     <div>
       <section className="showc">

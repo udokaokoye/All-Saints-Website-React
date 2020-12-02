@@ -29,6 +29,8 @@ const Home = () => {
   const [showcase_text, setshowcase_text] = useState("initialState");
   const [misc, setmisc] = useState([]);
   const [events, setevents] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
+  const [timeup, settimeup] = useState(false);
   useEffect(() => {
     AOS.init();
     setTimeout(() => {
@@ -47,6 +49,7 @@ const Home = () => {
 
   const fetch_showcase_title = () => {
     const formData = new FormData();
+    setisLoading(true);
 
     const url =
       "http://localhost/All%20Saints%20Backend/random.php?qr=showcase_text";
@@ -56,15 +59,14 @@ const Home = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        // setshowcase_text(res[0]);
-        // console.log(res);
+        setisLoading(false);
       })
       .catch((err) => console.log(err));
   };
 
   const fetchMisc = () => {
     const formData = new FormData();
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
@@ -72,6 +74,7 @@ const Home = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         setmisc(res);
       })
       .catch((err) => console.log(err));
@@ -88,6 +91,7 @@ const Home = () => {
   };
 
   const fetchEvents = () => {
+    setisLoading(true);
     const url =
       "http://localhost/All%20Saints%20Backend/event.php?mode=dwl-ord";
     fetch(url, {
@@ -95,6 +99,7 @@ const Home = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         setevents(res);
         // console.log(res[0].evt_time);
 
@@ -136,6 +141,7 @@ const Home = () => {
 
             // If the count down is over, write some text
             if (distance < 0) {
+              settimeup(true);
               clearInterval(x);
               setcntd({});
             }
@@ -145,6 +151,23 @@ const Home = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#F1F2F3",
+        }}
+      >
+        <img width="8%" src={require("../../assets/loader1.gif")} alt="" />
+      </div>
+    );
+  }
 
   return (
     <React.Fragment>
@@ -387,28 +410,32 @@ const Home = () => {
             </div>
           );
         })}
-        <div className="starts-in">
-          <div className="overlay"></div>
-          <span className="evt-str">Event starts in</span>
-          <div className="countdw">
-            {cntd.days !== 0 ? (
-              <span className="d">
-                <span>{cntd.days}</span> <span>Days</span>
+        {!timeup ? (
+          <div className="starts-in">
+            <div className="overlay"></div>
+            <span className="evt-str">Event starts in</span>
+            <div className="countdw">
+              {cntd.days !== 0 ? (
+                <span className="d">
+                  <span>{cntd.days}</span> <span>Days</span>
+                </span>
+              ) : (
+                ""
+              )}
+              <span className="hr">
+                <span>{cntd.hours}</span> <span>Hours</span>
               </span>
-            ) : (
-              ""
-            )}
-            <span className="hr">
-              <span>{cntd.hours}</span> <span>Hours</span>
-            </span>
-            <span className="mi">
-              <span>{cntd.minutes}</span> <span>Minutes</span>
-            </span>
-            <span className="se">
-              <span>{cntd.seconds}</span> <span>Seconds</span>
-            </span>
+              <span className="mi">
+                <span>{cntd.minutes}</span> <span>Minutes</span>
+              </span>
+              <span className="se">
+                <span>{cntd.seconds}</span> <span>Seconds</span>
+              </span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
       </section>
 
       <section

@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import "./Sermon.css";
 const Sermon = () => {
+  const [isLoading, setisLoading] = useState(false);
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#F1F2F3",
+        }}
+      >
+        <img width="8%" src={require("../../assets/loader1.gif")} alt="" />
+      </div>
+    );
+  }
   return (
     <div>
       <div className="sermon">

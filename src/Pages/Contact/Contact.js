@@ -12,10 +12,10 @@ const Contact = () => {
   const [messagebox, setmessagebox] = useState([false, "", "", ""]);
   const [anny, setanny] = useState(false);
   const [misc_fetch, setmisc_fetch] = useState([]);
-
+  const [isLoading, setisLoading] = useState(false);
   useEffect(() => {
-    fetchMisc()
-  }, [])
+    fetchMisc();
+  }, []);
 
   const submitContact = () => {
     if (
@@ -35,7 +35,7 @@ const Contact = () => {
     formData.append("phone", cnt_phone);
     formData.append("email", cnt_email);
     formData.append("message", cnt_message);
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/contact.php";
     fetch(url, {
       method: "POST",
@@ -43,6 +43,7 @@ const Contact = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         if (res === "SUCCESS") {
           setmessagebox([true, "Message sent ", " rgba(0, 126, 0, 0.788)"]);
           document.getElementById("cnt").scrollIntoView();
@@ -61,14 +62,14 @@ const Contact = () => {
         return;
       }
       formData.append("lastName", pry_lastName);
-    formData.append("firstName", pry_firstName);
+      formData.append("firstName", pry_firstName);
       // alert('False')
       // return;
-    } 
-    
+    }
+
     if (anny === true) {
-      formData.append("lastName", '-');
-    formData.append("firstName", '-');
+      formData.append("lastName", "-");
+      formData.append("firstName", "-");
       if (prayer === "") {
         setmessagebox([false, "Please fill in all fields", "red", "pry"]);
         document.getElementById("pry").scrollIntoView();
@@ -78,9 +79,8 @@ const Contact = () => {
       // return;
     }
 
-    
     formData.append("prayer", prayer);
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/prayer.php";
     fetch(url, {
       method: "POST",
@@ -88,6 +88,7 @@ const Contact = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         if (res === "SUCCESS") {
           setmessagebox([
             false,
@@ -107,7 +108,7 @@ const Contact = () => {
 
   const fetchMisc = () => {
     const formData = new FormData();
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
@@ -115,10 +116,28 @@ const Contact = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         setmisc_fetch(res);
       })
       .catch((err) => console.log(err));
   };
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#F1F2F3",
+        }}
+      >
+        <img width="8%" src={require("../../assets/loader1.gif")} alt="" />
+      </div>
+    );
+  }
   return (
     <div>
       <div className="contact">
@@ -149,9 +168,9 @@ const Contact = () => {
             <span id="cnt">Address:</span>
             <p>Abalti Barracks P.O BOX: 363 Surulere, Lagos.</p>
             <span>Phone:</span>
-            <p>{misc_fetch['cnt_phone']}</p>
+            <p>{misc_fetch["cnt_phone"]}</p>
             <span>Email:</span>
-            <p>{misc_fetch['cnt_email']}</p>
+            <p>{misc_fetch["cnt_email"]}</p>
           </div>
         </div>
 

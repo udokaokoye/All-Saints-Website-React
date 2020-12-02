@@ -35,23 +35,63 @@
 .live .main .right .content .chat {
   height: 93%;
   overflow: scroll;
+  overscroll-behavior-y: contain;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
 }
 
 .live .main .right .content .chat .cht_msg {
   padding: 9px;
   margin-bottom: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.live .main .right .content .chat .cht_msg h5 {
+.live .main .right .content .chat .cht_msg:last-child {
+  scroll-snap-align: end;
+}
+
+.live .main .right .content .chat .cht_msg .lt h5 {
   font-family: 'Roboto';
   opacity: 0.7;
   padding-bottom: 6px;
 }
 
-.live .main .right .content .chat .cht_msg p {
+.live .main .right .content .chat .cht_msg .lt p {
   font-family: 'Roboto';
   font-weight: 500;
   padding-left: 7px;
+}
+
+.live .main .right .content .chat .cht_msg .rt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.live .main .right .content .chat .cht_msg .rt .lk {
+  margin-right: 10px;
+}
+
+.live .main .right .content .chat .cht_msg .rt .lk span {
+  color: black;
+  margin-right: 8px;
+}
+
+.live .main .right .content .chat .cht_msg .rt span {
+  color: red;
+  font-family: 'Rubik';
+  font-weight: bolder;
 }
 
 .live .main .right .content .inpt {

@@ -9,15 +9,17 @@ const Auth = () => {
   const [password, setpassword] = useState("");
   const [error_email, seterror_email] = useState("");
   const [error_password, seterror_password] = useState("");
-
+  const [isLoading, setisLoading] = useState(false);
   useEffect(() => {
     // removeCookie("user", { path: "/" });
     verify();
   }, []);
   const verify = () => {
+    setisLoading(true);
     if (cookies.admin) {
       history.push("/admin");
     }
+    setisLoading(false);
   };
   const Login = () => {
     const formData = new FormData();
@@ -37,7 +39,7 @@ const Auth = () => {
 
     formData.append("email", email);
     formData.append("password", password);
-
+    setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/auth.php?auth=admin";
     fetch(url, {
       method: "POST",
@@ -45,6 +47,7 @@ const Auth = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        setisLoading(false);
         if (res[0] === "VALID") {
           var tomorrow = new Date();
           tomorrow.setDate(new Date().getDate() + 1);
@@ -60,6 +63,23 @@ const Auth = () => {
       .catch((err) => console.log(err));
     // alert(`${email}, ${password}`);
   };
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#F1F2F3",
+        }}
+      >
+        <img width="8%" src={require("../../../assets/loader1.gif")} alt="" />
+      </div>
+    );
+  }
   return (
     <div>
       <div className="auth">

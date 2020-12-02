@@ -29,19 +29,46 @@
                 .chat {
                     height: 93%;
                     overflow: scroll;
+                    overscroll-behavior-y: contain;
+                    scroll-snap-type: y proximity;
                     .cht_msg {
                         padding: 9px;
                         margin-bottom: 12px;
-                        h5{ 
-                            font-family: 'Roboto';
-                            opacity: 0.7;
-                            padding-bottom: 6px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        &:last-child {
+                            scroll-snap-align: end;
+                        }
+                        .lt{
+                            h5{ 
+                                font-family: 'Roboto';
+                                opacity: 0.7;
+                                padding-bottom: 6px;
+                            }
+    
+                            p {
+                                font-family: 'Roboto';
+                                font-weight: 500;
+                                padding-left: 7px;
+                            }
                         }
 
-                        p {
-                            font-family: 'Roboto';
-                            font-weight: 500;
-                            padding-left: 7px;
+                        .rt {
+                            display: flex;
+                            align-items: center;
+                            .lk {
+                                margin-right: 10px;
+                                span {
+                                    color: black;
+                                    margin-right: 8px;
+                                }
+                            }
+                            span {
+                                color: red;
+                                font-family: 'Rubik';
+                                font-weight: bolder;
+                            }
                         }
                     }
                 }
