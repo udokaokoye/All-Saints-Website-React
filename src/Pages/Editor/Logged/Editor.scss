@@ -534,4 +534,35 @@
         }
 
     }
+
+    .chats {
+        .title {
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 200;
+        }
+
+        .content {
+            width: 80%;
+            margin: 0 auto;
+
+            .main_content {
+                margin-bottom: 25px;
+                h1{
+                    font-family: 'Roboto';
+                    font-weight: 200;
+                }
+                p {
+                    padding: 10px 0;
+                }
+                button {
+                    background: red;
+                    border: 1px solid white;
+                    color: white;
+                    padding: 8px 8px;
+
+                }
+            }
+        }
+    }
 }

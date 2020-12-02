@@ -649,4 +649,35 @@
   color: rgba(0, 0, 255, 0.774);
   border: 1px solid blue;
 }
+
+.editor .chats .title {
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 200;
+}
+
+.editor .chats .content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.editor .chats .content .main_content {
+  margin-bottom: 25px;
+}
+
+.editor .chats .content .main_content h1 {
+  font-family: 'Roboto';
+  font-weight: 200;
+}
+
+.editor .chats .content .main_content p {
+  padding: 10px 0;
+}
+
+.editor .chats .content .main_content button {
+  background: red;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 8px;
+}
 /*# sourceMappingURL=Editor.css.map */

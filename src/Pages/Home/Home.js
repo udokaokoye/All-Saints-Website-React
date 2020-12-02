@@ -28,6 +28,7 @@ const Home = () => {
   const [navTrans, setnavTrans] = useState(false);
   const [showcase_text, setshowcase_text] = useState("initialState");
   const [misc, setmisc] = useState([]);
+  const [events, setevents] = useState([]);
   useEffect(() => {
     AOS.init();
     setTimeout(() => {
@@ -38,49 +39,11 @@ const Home = () => {
       }, 10000);
     }, 8000);
 
-    eventCount();
+    // eventCount();
     fetch_showcase_title();
     fetchMisc();
-    
+    fetchEvents();
   }, []);
-
-  const eventCount = () => {
-    // Set the date we're counting down to
-    var countDownDate = new Date("Sunday, 29 November 2020 18:00:00").getTime();
-
-    // Update the count down every 1 second
-    var x = setInterval(function () {
-      // Get today's date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Output the result in an element with id="demo"
-      setcntd({
-        days: days,
-        hours: hours,
-        minutes: minutes,
-        seconds: seconds,
-      });
-
-      // console.log(cntd);
-
-      // If the count down is over, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        setcntd({});
-      }
-    }, 1000);
-  };
 
   const fetch_showcase_title = () => {
     const formData = new FormData();
@@ -114,7 +77,6 @@ const Home = () => {
       .catch((err) => console.log(err));
   };
 
-
   window.onscroll = () => {
     if (window.scrollY > 10) {
       setnavTrans(true);
@@ -123,6 +85,65 @@ const Home = () => {
     if (window.scrollY < 1) {
       setnavTrans(false);
     }
+  };
+
+  const fetchEvents = () => {
+    const url =
+      "http://localhost/All%20Saints%20Backend/event.php?mode=dwl-ord";
+    fetch(url, {
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        setevents(res);
+        // console.log(res[0].evt_time);
+
+        const eventCount = () => {
+          // Set the date we're counting down to
+          var countDownDate = new Date(
+            moment(res[0].evt_date).format("dddd, D MMMM YYYY") +
+              ", " +
+              res[0].evt_time
+          ).getTime();
+
+          // Update the count down every 1 second
+          var x = setInterval(function () {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor(
+              (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            var minutes = Math.floor(
+              (distance % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            setcntd({
+              days: days,
+              hours: hours,
+              minutes: minutes,
+              seconds: seconds,
+            });
+
+            // console.log(cntd);
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+              clearInterval(x);
+              setcntd({});
+            }
+          }, 1000);
+        };
+        eventCount();
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -134,7 +155,7 @@ const Home = () => {
             <div className="img-logo">
               <img src={require("../../assets/Chaplain.jpg")} alt="" />
             </div>
-            
+
             <h1>Cathedral</h1>
           </div>
           <div className="home-links">
@@ -159,12 +180,14 @@ const Home = () => {
         </header>
 
         <section className="showcase">
-          <h1 dangerouslySetInnerHTML={{__html: (misc["showcase_text"] + "")
-        .replace(
-          "\n",
-          `<br/>`
-        )}} data-aos="fade" data-aos-duration="1500">
-             {/* THE MIRACLE <br/> ARENA */}
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: (misc["showcase_text"] + "").replace("\n", `<br/>`),
+            }}
+            data-aos="fade"
+            data-aos-duration="1500"
+          >
+            {/* THE MIRACLE <br/> ARENA */}
             {/* {misc["showcase_text"]} */}
           </h1>
           {/* <h1 data-aos="fade" data-aos-duration="1500" data-aos-delay="500">
@@ -276,11 +299,13 @@ const Home = () => {
       </section>
 
       <section className="social">
-        <h1 dangerouslySetInnerHTML={{__html: (misc["banner_txt"] + "")
-        .replace(
-          "\n",
-          `<br/>`
-        )}} data-aos="fade" data-aos-duration="1000">
+        <h1
+          dangerouslySetInnerHTML={{
+            __html: (misc["banner_txt"] + "").replace("\n", `<br/>`),
+          }}
+          data-aos="fade"
+          data-aos-duration="1000"
+        >
           {/* Several Ways to connect With Us. */}
           {/* {misc['banner_txt']} */}
         </h1>
@@ -330,11 +355,11 @@ const Home = () => {
           />
         </div>
         <div className="text">
-          <h1 dangerouslySetInnerHTML={{__html: (misc["live_txt"] + "")
-        .replace(
-          "\n",
-          `<br/>`
-        )}}></h1>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: (misc["live_txt"] + "").replace("\n", `<br/>`),
+            }}
+          ></h1>
         </div>
       </section>
 
@@ -349,13 +374,19 @@ const Home = () => {
           <h1>Coming Events</h1>
         </div>
 
-        <div className="content">
-          <div className="overlay">
-            <h1 className="evt-name">EMHC Service</h1>
+        {events.slice(0, 1).map((evt) => {
+          return (
+            <div className="content">
+              <div className="overlay">
+                <h1 className="evt-name">{evt.evt_title}</h1>
 
-            <h1 className="evt-date">Date: 14-11-2020 - Time: 7:30am</h1>
-          </div>
-        </div>
+                <h1 className="evt-date">
+                  Date: {evt.evt_date} - Time: {evt.evt_time}
+                </h1>
+              </div>
+            </div>
+          );
+        })}
         <div className="starts-in">
           <div className="overlay"></div>
           <span className="evt-str">Event starts in</span>

@@ -311,6 +311,55 @@
         }
     }
 
+    .all_admin {
+        width: 80%;
+        // background-color: red;
+
+        .title {
+            font-family: 'Roboto';
+            font-weight: bold;
+            font-size: 29px;
+            text-align: left;
+        }
+
+        .content {
+            width: 100%;
+            .main_content {
+                width: 50%;
+                border: 1px solid black;
+                padding: 10px;
+                margin-bottom: 20px;
+                border-radius: 3px;
+
+                h1 {
+                    font-family: 'Roboto';
+                    font-weight: 200;
+                }
+                
+                p {
+                    padding: 10px 0;
+                    opacity: 0.8;
+                }
+
+                .delBut {
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    text-align: right;
+
+                    button {
+                        background-color: red;
+                        width: 120px;
+                        height: 50px;
+                        border: 1px solid white;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 .add_editor {
@@ -429,6 +478,55 @@
                     background-color: transparent;
                     color: rgba(0, 0, 255, 0.774);
                     border: 1px solid blue;
+                }
+            }
+        }
+    }
+
+    .all_editor {
+        width: 80%;
+        // background-color: red;
+
+        .title {
+            font-family: 'Roboto';
+            font-weight: bold;
+            font-size: 29px;
+            text-align: left;
+        }
+
+        .content {
+            width: 100%;
+            .main_content {
+                width: 50%;
+                border: 1px solid black;
+                padding: 10px;
+                margin-bottom: 20px;
+                border-radius: 3px;
+
+                h1 {
+                    font-family: 'Roboto';
+                    font-weight: 200;
+                }
+                
+                p {
+                    padding: 10px 0;
+                    opacity: 0.8;
+                }
+
+                .delBut {
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    text-align: right;
+
+                    button {
+                        background-color: red;
+                        width: 120px;
+                        height: 50px;
+                        border: 1px solid white;
+                        color: white;
+                        cursor: pointer;
+                    }
                 }
             }
         }

@@ -378,6 +378,55 @@
   border: 1px solid blue;
 }
 
+.add_admin .all_admin {
+  width: 80%;
+}
+
+.add_admin .all_admin .title {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 29px;
+  text-align: left;
+}
+
+.add_admin .all_admin .content {
+  width: 100%;
+}
+
+.add_admin .all_admin .content .main_content {
+  width: 50%;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.add_admin .all_admin .content .main_content h1 {
+  font-family: 'Roboto';
+  font-weight: 200;
+}
+
+.add_admin .all_admin .content .main_content p {
+  padding: 10px 0;
+  opacity: 0.8;
+}
+
+.add_admin .all_admin .content .main_content .delBut {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: right;
+}
+
+.add_admin .all_admin .content .main_content .delBut button {
+  background-color: red;
+  width: 120px;
+  height: 50px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
 .add_editor {
   width: 75%;
   margin: 0 auto;
@@ -529,5 +578,54 @@
   background-color: transparent;
   color: rgba(0, 0, 255, 0.774);
   border: 1px solid blue;
+}
+
+.add_editor .all_editor {
+  width: 80%;
+}
+
+.add_editor .all_editor .title {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 29px;
+  text-align: left;
+}
+
+.add_editor .all_editor .content {
+  width: 100%;
+}
+
+.add_editor .all_editor .content .main_content {
+  width: 50%;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.add_editor .all_editor .content .main_content h1 {
+  font-family: 'Roboto';
+  font-weight: 200;
+}
+
+.add_editor .all_editor .content .main_content p {
+  padding: 10px 0;
+  opacity: 0.8;
+}
+
+.add_editor .all_editor .content .main_content .delBut {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: right;
+}
+
+.add_editor .all_editor .content .main_content .delBut button {
+  background-color: red;
+  width: 120px;
+  height: 50px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
 }
 /*# sourceMappingURL=Admin.css.map */

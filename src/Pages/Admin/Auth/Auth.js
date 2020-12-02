@@ -16,9 +16,7 @@ const Auth = () => {
   }, []);
   const verify = () => {
     if (cookies.admin) {
-            history.push("/admin");
-    } else {
-      alert("NOO")
+      history.push("/admin");
     }
   };
   const Login = () => {
@@ -57,7 +55,7 @@ const Auth = () => {
         } else if (res[0] === "INVALID PASSWORD") {
           seterror_password("Password not valid.");
         }
-        console.log(res)
+        console.log(res);
       })
       .catch((err) => console.log(err));
     // alert(`${email}, ${password}`);
