@@ -1,19 +1,15 @@
 <?php
-include "./connection.php";
+include './connection.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $query = "SELECT * FROM `prayer`";
-    $result = mysqli_query($link, $query);
+if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
+    $query = 'SELECT * FROM `prayer` ORDER BY id DESC';
+    $result = mysqli_query( $link, $query );
     $data = [];
-    while ($row = mysqli_fetch_array($result)) {
-        array_push($data, $row);
+    while ( $row = mysqli_fetch_array( $result ) ) {
+        array_push( $data, $row );
     }
-    echo json_encode(($data));
-
+    echo json_encode( ( $data ) );
 
 }
-
-
-
 
 ?>
