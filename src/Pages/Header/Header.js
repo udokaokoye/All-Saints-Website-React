@@ -29,20 +29,24 @@ const Header = () => {
         </div>
         <div className="home-links">
           <div className="home-links-inner">
-            <NavLink className="home-link-default" to="/">
+            <NavLink activeClassName={'nav-active'} className="home-link-default" to="/">
               Home
             </NavLink>
-            <NavLink className="home-link-default" to="/events">
+            <NavLink activeClassName={'nav-active'} className="home-link-default" to="/events">
               Events
             </NavLink>
-            <NavLink className="home-link-default" to="/sermon">
+            <NavLink activeClassName={'nav-active'} className="home-link-default" to="/sermon">
               Sermon
             </NavLink>
-            <NavLink className="home-link-default" to="/dss">
+            <NavLink activeClassName={'nav-active'} className="home-link-default" to="/dss">
               DSS
             </NavLink>
-            <NavLink className="home-link-default" to="/contact">
+            <NavLink activeClassName={'nav-active'} className="home-link-default" to="/contact">
               Contact
+            </NavLink>
+
+            <NavLink activeClassName={'nav-active'} className="home-link-default" to="/giving">
+              Give
             </NavLink>
           </div>
         </div>

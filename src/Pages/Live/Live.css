@@ -70,6 +70,12 @@
   padding-left: 7px;
 }
 
+.live .main .right .content .chat .cht_msg .lt span {
+  font-family: 'Roboto';
+  font-size: 12px;
+  opacity: 0.6;
+}
+
 .live .main .right .content .chat .cht_msg .rt {
   display: -webkit-box;
   display: -ms-flexbox;

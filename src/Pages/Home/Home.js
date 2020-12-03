@@ -18,7 +18,7 @@ import "aos/dist/aos.css";
 require("./Home.css");
 
 const Home = () => {
-  const [popup1, setpopup1] = useState(false);
+  const [popup1, setpopup1] = useState([false]);
   const [cntd, setcntd] = useState({
     days: 0,
     hours: 0,
@@ -33,19 +33,42 @@ const Home = () => {
   const [timeup, settimeup] = useState(false);
   useEffect(() => {
     AOS.init();
-    setTimeout(() => {
-      setpopup1(true);
+    // setTimeout(() => {
+    //   setpopup1(true);
+
+    //   // setTimeout(() => {
+    //   //   setpopup1(false);
+    //   // }, 10000);
+    // }, 8000);
+
+    // eventCount();
+    fetch_showcase_title();
+    fetchMisc();
+    fetchEvents();
+    fetchVOTD()
+  }, []);
+
+
+  const fetchVOTD = () => {
+    setisLoading(true);
+    const url = "https://beta.ourmanna.com/api/v1/get/?format=json&&order=random";
+    fetch(url, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        setisLoading(false);
+        setTimeout(() => {
+      setpopup1([true, res.verse.details.text, res.verse.details.reference]);
 
       setTimeout(() => {
         setpopup1(false);
       }, 10000);
     }, 8000);
 
-    // eventCount();
-    fetch_showcase_title();
-    fetchMisc();
-    fetchEvents();
-  }, []);
+      })
+      .catch((err) => console.log(err));
+  }
 
   const fetch_showcase_title = () => {
     const formData = new FormData();
@@ -443,14 +466,14 @@ const Home = () => {
         id="popup1"
         style={{
           transition: "all 0.5s ease-in-out",
-          height: popup1 ? "40vh" : "0px",
+          height: popup1[0] ? "40vh" : "0px",
         }}
       >
         <div className="bar">
           <h1>Verse Of The Day</h1>
           <span
             onClick={() => {
-              setpopup1(false);
+              setpopup1([false]);
             }}
           >
             X
@@ -458,12 +481,9 @@ const Home = () => {
         </div>
         <div className="content">
           <p className="text">
-            For I am convinced that neither death nor life, neither angels nor
-            demons, neither the present nor the future, nor any powers, neither
-            height nor depth, nor anything else in all creation, will be able to
-            separate us from the love of God that is in Christ Jesus our Lord.
+            {popup1[1]}
           </p>
-          <p className="scripture">~Romans 8:38-39</p>
+          <p className="scripture">~{popup1[2]}</p>
         </div>
       </section>
 

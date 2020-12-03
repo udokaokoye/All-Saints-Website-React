@@ -672,7 +672,15 @@ const Editor = () => {
               return (
                 <div className="main_content">
                   <h1>{chat_info.user}</h1>
-                  <p>{chat_info.message}</p>
+                  <p className='msg'>{chat_info.message}</p>
+                  {moment().format("MMMM Do, YYYY") ==
+                      moment(chat_info.created_at).format("MMMM Do, YYYY") ? (
+                        <p>{moment(chat_info.created_at).fromNow()}</p>
+                      ) : (
+                        <p>
+                          {moment(chat_info.created_at).format("DD MMM YYYY")}
+                        </p>
+                      )}
                   <button onClick={() => deleteFuc("chat", chat_info.id)}>
                     Delete
                   </button>

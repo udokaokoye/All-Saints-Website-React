@@ -5,6 +5,7 @@ import {
   faTrash,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
+import moment from 'moment';
 import "./Live.css";
 const Live = () => {
   const [bible_div, setbible_div] = useState(true);
@@ -149,6 +150,18 @@ const Live = () => {
                       <div className="lt">
                         <h5>{chat_ft.user}</h5>
                         <p>{chat_ft.message}</p>
+                        {moment().format("MMMM Do, YYYY") ==
+                      moment(chat_ft.created_at).format("MMMM Do, YYYY") ? (
+                        <span>{moment(chat_ft.created_at).fromNow()}</span>
+                      ) : (
+                        <span>
+                          {moment(chat_ft.created_at).format("DD MMM YYYY")}
+                        </span>
+                      )}
+                      <br/>
+                      {chat_ft.likes === 'true' ? (
+                        <span>Liked by All Saints AHQ Cathedral</span>
+                      ) : ''}
                       </div>
 
                       <div className="rt">

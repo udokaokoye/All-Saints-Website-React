@@ -19,6 +19,7 @@ import Editor from "./Pages/Editor/Logged/Editor";
 import Live from "./Pages/Live/Live";
 import AdminAuth from './Pages/Admin/Auth/Auth';
 import Admin from './Pages/Admin/Logged/Admin';
+import Give from './Pages/Give/Give';
 function App() {
   return (
     <Router>
@@ -174,6 +175,22 @@ function App() {
                 <div className="page">
                   <Header />
                   <Live />
+                </div>
+              </CSSTransition>
+            )}
+          </Route>
+
+          <Route key={"/giving"} exact path={"/giving"}>
+            {({ match }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={300}
+                classNames="page"
+                unmountOnExit
+              >
+                <div className="page">
+                  <Header />
+                  <Give />
                 </div>
               </CSSTransition>
             )}

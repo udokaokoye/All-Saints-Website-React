@@ -553,7 +553,12 @@
                     font-weight: 200;
                 }
                 p {
+                    padding: 8px 0;
+                    opacity: 0.6;
+                }
+                .msg {
                     padding: 10px 0;
+                    opacity: 1;
                 }
                 button {
                     background: red;

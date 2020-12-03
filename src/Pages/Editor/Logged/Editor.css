@@ -671,7 +671,13 @@
 }
 
 .editor .chats .content .main_content p {
+  padding: 8px 0;
+  opacity: 0.6;
+}
+
+.editor .chats .content .main_content .msg {
   padding: 10px 0;
+  opacity: 1;
 }
 
 .editor .chats .content .main_content button {
