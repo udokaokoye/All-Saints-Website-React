@@ -299,4 +299,67 @@
   color: rgba(0, 0, 255, 0.774);
   border: 1px solid blue;
 }
+
+@media only screen and (max-width: 768px) {
+  .cnt-tp {
+    height: 15vh;
+  }
+  .cnt-tp h1 {
+    font-size: 30px;
+  }
+  .cnt-inf {
+    display: block;
+    height: auto;
+  }
+  .cnt-inf .map {
+    width: 100%;
+    height: 50vh;
+  }
+  .cnt-inf .address {
+    width: 100%;
+    margin-top: 22px;
+  }
+  .cnt-inf .address h1 {
+    text-align: center;
+  }
+  .cnt-inf .address .sml-txt {
+    text-align: center;
+  }
+  .contact-form {
+    margin-top: 20px;
+  }
+  .contact-form .message-box {
+    width: 75%;
+  }
+  .contact-form .titl {
+    font-size: 35px;
+  }
+  .contact-form .form {
+    width: 95%;
+  }
+  .contact-form .form .name .input, .contact-form .form .phone .input, .contact-form .form .email .input, .contact-form .form .message .input {
+    display: block;
+  }
+  .contact-form .form .message .input .inpt1 textarea {
+    width: 250px;
+  }
+  .prayer-request {
+    margin-top: 20px;
+  }
+  .prayer-request .message-box {
+    width: 75%;
+  }
+  .prayer-request .titl {
+    font-size: 35px;
+  }
+  .prayer-request .form {
+    width: 95%;
+  }
+  .prayer-request .form .name .input, .prayer-request .form .phone .input, .prayer-request .form .email .input, .prayer-request .form .message .input {
+    display: block;
+  }
+  .prayer-request .form .message .input .inpt1 textarea {
+    width: 250px;
+  }
+}
 /*# sourceMappingURL=Contact.css.map */

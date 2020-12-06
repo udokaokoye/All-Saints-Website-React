@@ -84,3 +84,20 @@
         }
     }
 }
+
+@media only screen and (max-width: 768px) {
+
+    .ser-showcase {
+        width: 100%;
+    }
+
+    .btm-bar {
+        .inner {
+            width: 100%;
+            h1 {
+                font-size: 18px;
+            }
+        }
+    }
+
+}

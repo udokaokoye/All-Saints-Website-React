@@ -107,4 +107,16 @@
   color: white;
   border: 1px solid transparent;
 }
+
+@media only screen and (max-width: 768px) {
+  .ser-showcase {
+    width: 100%;
+  }
+  .btm-bar .inner {
+    width: 100%;
+  }
+  .btm-bar .inner h1 {
+    font-size: 18px;
+  }
+}
 /*# sourceMappingURL=Sermon.css.map */

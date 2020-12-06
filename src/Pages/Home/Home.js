@@ -6,7 +6,7 @@ import {
   NavLink,
 } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopyright, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { faCopyright, faAngleUp, faBars } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faYoutube,
@@ -45,7 +45,17 @@ const Home = () => {
     fetch_showcase_title();
     fetchMisc();
     fetchEvents();
-    fetchVOTD()
+    fetchVOTD();
+
+    window.onscroll = () => {
+      if (window.scrollY > 10) {
+        setnavTrans(true);
+      }
+  
+      if (window.scrollY < 1) {
+        setnavTrans(false);
+      }
+    };
   }, []);
 
 
@@ -61,9 +71,9 @@ const Home = () => {
         setTimeout(() => {
       setpopup1([true, res.verse.details.text, res.verse.details.reference]);
 
-      setTimeout(() => {
-        setpopup1(false);
-      }, 10000);
+      // setTimeout(() => {
+      //   setpopup1(false);
+      // }, 10000);
     }, 8000);
 
       })
@@ -103,15 +113,7 @@ const Home = () => {
       .catch((err) => console.log(err));
   };
 
-  window.onscroll = () => {
-    if (window.scrollY > 10) {
-      setnavTrans(true);
-    }
-
-    if (window.scrollY < 1) {
-      setnavTrans(false);
-    }
-  };
+  
 
   const fetchEvents = () => {
     setisLoading(true);
@@ -193,10 +195,11 @@ const Home = () => {
   }
 
   return (
-    <React.Fragment>
+    <React.Fragment >
+      <div style={{width: '100%'}} className="hm">
       <section className="top">
         <div className="overlay"></div>
-        <header className={`home-header ${navTrans ? "trans" : ""}`}>
+        <header className={`home-header ${navTrans ? "trans" : null}`}>
           <div className="home-logo">
             <div className="img-logo">
               <img src={require("../../assets/Chaplain.jpg")} alt="" />
@@ -206,7 +209,7 @@ const Home = () => {
           </div>
           <div className="home-links">
             <div className="home-links-inner">
-              <NavLink className="home-link-default" to="/">
+              <NavLink activeClassName={'nav-active-active'} className="home-link-default" to="/">
                 Home
               </NavLink>
               <NavLink className="home-link-default" to="/events">
@@ -221,8 +224,21 @@ const Home = () => {
               <NavLink className="home-link-default" to="/contact">
                 Contact
               </NavLink>
+              <NavLink  className="home-link-default" to="/giving">
+              Give
+            </NavLink>
             </div>
           </div>
+        
+          <div className="menu">
+        <FontAwesomeIcon
+                          color="red"
+                          className="bars"
+                          style={{ cursor: "pointer" }}
+                          onClick={() => alert("Menu Bar")}
+                          icon={faBars}
+                        />
+        </div>
         </header>
 
         <section className="showcase">
@@ -298,7 +314,7 @@ const Home = () => {
 
       <section className="New-Here-Section">
         <div className="new-here">
-          <div data-aos="fade-left" className="bar">
+          <div  className="bar">
             <span>WELCOME TO THE CATHEDRAL</span>
           </div>
 
@@ -492,6 +508,7 @@ const Home = () => {
           <FontAwesomeIcon icon={faCopyright} /> 2020 Copyright - Cathedral
         </p>
       </section>
+      </div>
     </React.Fragment>
   );
 };

@@ -150,3 +150,32 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 768px) {
+
+    .qt {
+        font-size: 15px;
+    }
+
+    .give-form {
+
+        .message-box {
+            width: 80%;
+        }
+        .form {
+            width: 100%;
+
+            .name, .phone, .email, .message {
+                .input{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 75%;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+    }
+
+}

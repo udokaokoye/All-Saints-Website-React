@@ -149,4 +149,78 @@
           transform: scale(1.1);
   outline: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .live .main {
+    width: 100%;
+    display: block;
+  }
+  .live .main .right {
+    width: 100%;
+    height: 53%;
+  }
+  .live .main .right .content .chat {
+    height: 90%;
+  }
+  .live .main .left {
+    width: 100%;
+    height: 57%;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 676px) {
+  .live .main {
+    width: 100%;
+    display: block;
+  }
+  .live .main .right {
+    width: 100%;
+    height: 50%;
+  }
+  .live .main .right .content .chat {
+    height: 90%;
+  }
+  .live .main .left {
+    width: 100%;
+    height: 50%;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 546px) {
+  .live .main .right {
+    width: 100%;
+    height: 70vh;
+  }
+  .live .main .left {
+    width: 100%;
+    height: 30vh;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 441px) {
+  .live .main .right {
+    width: 100%;
+    height: 75vh;
+  }
+  .live .main .left {
+    width: 100%;
+    height: 25vh;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .live .main .right {
+    width: 100%;
+    height: 60vh;
+  }
+  .live .main .left {
+    width: 100%;
+    height: 40vh;
+    padding: 0;
+  }
+}
 /*# sourceMappingURL=Live.css.map */

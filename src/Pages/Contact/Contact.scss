@@ -269,3 +269,107 @@
     }
 
 }
+
+
+@media only screen and (max-width: 768px) {
+
+.cnt-tp {
+    height: 15vh;
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+.cnt-inf {
+    display: block;
+    height: auto;
+    .map {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .address {
+        width: 100%;
+        margin-top: 22px;
+
+        h1 {
+            text-align: center;
+        }
+
+        .sml-txt {
+            text-align: center;
+        }
+    } 
+}
+
+.contact-form {
+    .message-box {
+        width: 75%;
+    }
+    margin-top: 20px;
+
+    .titl {
+        font-size: 35px;
+    }
+
+    .form {
+        width: 95%;
+
+        .name, .phone, .email, .message {
+
+            .input{
+                display: block;
+            }
+        }
+
+        .message {
+            .input {
+                .inpt1{
+                    textarea {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
+
+.prayer-request {
+    margin-top: 20px;
+
+    .message-box {
+        width: 75%;
+    }
+
+    .titl {
+        font-size: 35px;
+    }
+
+    .form {
+        width: 95%;
+
+        .name, .phone, .email, .message {
+
+            .input{
+                display: block;
+            }
+        }
+
+        .message {
+            .input {
+                .inpt1{
+                    textarea {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
+
+}

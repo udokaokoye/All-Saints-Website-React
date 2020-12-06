@@ -30,4 +30,18 @@
   font-weight: bold;
   font-family: 'Rubik';
 }
+
+@media only screen and (max-width: 768px) {
+  .dss {
+    width: 100%;
+    margin-top: 14vh;
+  }
+  .dss .dss-tit {
+    text-align: center;
+    padding: 15px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 28px;
+  }
+}
 /*# sourceMappingURL=Dss.css.map */

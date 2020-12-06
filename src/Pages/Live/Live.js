@@ -13,8 +13,9 @@ const Live = () => {
   const [live_service, setlive_service] = useState("");
   const [chat, setchat] = useState("");
   const [fetch_chat, setfetch_chat] = useState([]);
-  const [user, setuser] = useState("");
+  const [user, setuser] = useState("02");
   const [isLoading, setisLoading] = useState(false);
+  const [browserSize, setbrowserSize] = useState(window.innerWidth);
 
   useEffect(() => {
     fetchMisc();
@@ -38,14 +39,15 @@ const Live = () => {
       .catch((err) => console.log(err));
   };
   const sendChat = () => {
+    let user_cht;
     if (localStorage.getItem("cht_user")) {
       setuser(localStorage.getItem("cht_user"));
     } else {
-      let user_cht = prompt("Enter Username");
+       user_cht = prompt("Enter Username");
       if (user_cht === null) {
         return;
       } else {
-        localStorage.setItem("cht_user", user_cht);
+        localStorage.setItem("cht_user", user_cht)
       }
     }
     const formData = new FormData();
@@ -103,6 +105,28 @@ const Live = () => {
       .catch((err) => console.log(err));
   };
 
+  const checkLiveUser = (live_user) => {
+    const formData = new FormData();
+    formData.append("user", live_user);
+    const url = "http://localhost/All%20Saints%20Backend/check_user.php";
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        if (res === 'NOT EXIST') {
+          localStorage.setItem("cht_user", live_user);
+        } else {
+          alert('Name Taken \n Enter a new name')
+          let user_cht = prompt("Enter Username");
+          localStorage.setItem("cht_user", user_cht)
+          return;
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+
   if (isLoading) {
     return (
       <div
@@ -123,12 +147,34 @@ const Live = () => {
   return (
     <div className="live">
       <div className="main">
+        
         <div
           dangerouslySetInnerHTML={{ __html: live_service }}
           className="left"
         ></div>
         <div className="right">
-          {bible_div ? (
+          {browserSize < 768 ? (<div className="bar">
+            <button
+              style={{ fontWeight: bible_div ? "bold" : "inherit" }}
+              onClick={() => {
+                setbible_div(true);
+                setchat_div(false);
+              }}
+            >
+              Bible
+            </button>
+            <button
+              style={{ fontWeight: chat_div ? "bold" : "inherit" }}
+              onClick={() => {
+                setbible_div(false);
+                setchat_div(true);
+              }}
+            >
+              Chat
+            </button>
+          </div>
+         ) : ''}
+         {bible_div ? (
             <div className="content">
               <iframe
                 src="https://chop.bible.com/bible"
@@ -143,6 +189,7 @@ const Live = () => {
 
           {chat_div ? (
             <div className="content">
+              
               <div className="chat">
                 {fetch_chat.map((chat_ft) => {
                   return (
@@ -175,13 +222,15 @@ const Live = () => {
                             icon={faThumbsUp}
                           />
                         </div> */}
-                        <FontAwesomeIcon
+                        {chat_ft.user === localStorage.getItem("cht_user") ? (
+                          <FontAwesomeIcon
                           color="red"
                           className="snd"
                           style={{ cursor: "pointer" }}
                           onClick={() => deleteFuc("chat", chat_ft.id)}
                           icon={faTrash}
                         />
+                        ) : ''}
                       </div>
                     </div>
                   );
@@ -205,7 +254,7 @@ const Live = () => {
           ) : (
             ""
           )}
-          <div className="bar">
+          {browserSize > 768 ? (<div className="bar">
             <button
               style={{ fontWeight: bible_div ? "bold" : "inherit" }}
               onClick={() => {
@@ -225,6 +274,7 @@ const Live = () => {
               Chat
             </button>
           </div>
+         ) : ''}
         </div>
       </div>
     </div>

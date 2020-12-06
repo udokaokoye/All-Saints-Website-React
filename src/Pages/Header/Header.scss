@@ -18,6 +18,16 @@
         color: black;
         // border: 1px solid transparent;
         padding: 10px 25px;
+
+        &:hover {
+            border: 1px solid black;
+        }
+    }
+
+    .menu{
+        width: 100px;
+        height: 100px;
+        display: none;
     }
 }
 
@@ -29,4 +39,50 @@
 .nav-active {
     border: 1px solid black;
     padding: 10px 25px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .home-links {
+        display: none;
+    }
+    
+    .hd-header{
+        justify-content: space-between;
+
+        .home-logo {
+            // background-color: blue;
+            display: flex;
+            justify-content: space-around ;
+            align-items: center;
+            padding-left: 8px;
+            width: fit-content;
+
+            .img-logo {
+                img{ 
+                    transform: scale(0.8);
+                }
+            }
+            h1{
+                margin-left: 25px;
+                color: black;
+                font-size: 29px;
+            }
+        }
+
+        .menu {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // background-color: red;
+
+            .bars {
+                color: black;
+                font-size: 25px;
+            }
+        }
+    }
+
+    
 }

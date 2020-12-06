@@ -137,3 +137,131 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 768px) {
+
+
+.live {
+    .main {
+        width: 100%;
+        display: block;
+
+        .right {
+            width: 100%;
+            height: 53%;
+            // background-color: red;
+
+            .content {
+                .chat {
+                    height: 90%;
+                }
+                .inpt {
+
+                }
+            }
+        }
+
+        .left {
+            // background-color: red;
+            width: 100%;
+            height: 57%;
+            padding: 0;
+        }
+    }
+}
+
+}
+
+@media only screen and (max-width: 676px) {
+
+    .live {
+        .main {
+            width: 100%;
+            display: block;
+    
+            .right {
+                width: 100%;
+                height: 50%;
+                // background-color: red;
+    
+                .content {
+                    .chat {
+                        height: 90%;
+                    }
+                    .inpt {
+    
+                    }
+                }
+            }
+    
+            .left {
+                // background-color: red;
+                width: 100%;
+                height: 50%;
+                padding: 0;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 546px) {
+
+    .live {
+        .main {
+            .right {
+                width: 100%;
+                height: 70vh;
+                // background-color: red;
+            }
+    
+            .left {
+                // background-color: red;
+                width: 100%;
+                height: 30vh;
+                padding: 0;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 441px) {
+
+    .live {
+        .main {
+            .right {
+                width: 100%;
+                height: 75vh;
+                // background-color: red;
+            }
+    
+            .left {
+                // background-color: red;
+                width: 100%;
+                height: 25vh;
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .live {
+        .main {
+            .right {
+                width: 100%;
+                height: 60vh;
+                // background-color: red;
+            }
+    
+            .left {
+                // background-color: red;
+                width: 100%;
+                height: 40vh;
+                padding: 0;
+            }
+        }
+    }
+}

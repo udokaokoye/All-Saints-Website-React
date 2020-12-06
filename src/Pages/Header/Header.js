@@ -5,19 +5,23 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars
+} from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 const Header = () => {
   const [navTrans, setnavTrans] = useState(false);
 
-  window.onscroll = () => {
-    if (window.scrollY > 10) {
-      setnavTrans(true);
-    }
+  // window.onscroll = () => {
+  //   if (window.scrollY > 10) {
+  //     setnavTrans(true);
+  //   }
 
-    if (window.scrollY < 1) {
-      setnavTrans(false);
-    }
-  };
+  //   if (window.scrollY < 1) {
+  //     setnavTrans(false);
+  //   }
+  // };
   return (
     <React.Fragment>
       <header className={`hd-header ${navTrans ? "hd-trans" : ""}`}>
@@ -29,7 +33,7 @@ const Header = () => {
         </div>
         <div className="home-links">
           <div className="home-links-inner">
-            <NavLink activeClassName={'nav-active'} className="home-link-default" to="/">
+            <NavLink className="home-link-default" to="/">
               Home
             </NavLink>
             <NavLink activeClassName={'nav-active'} className="home-link-default" to="/events">
@@ -49,6 +53,15 @@ const Header = () => {
               Give
             </NavLink>
           </div>
+        </div>
+        <div className="menu">
+        <FontAwesomeIcon
+                          color="red"
+                          className="bars"
+                          style={{ cursor: "pointer" }}
+                          onClick={() => alert("Menu Bar")}
+                          icon={faBars}
+                        />
         </div>
       </header>
     </React.Fragment>
