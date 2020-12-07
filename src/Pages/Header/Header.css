@@ -46,6 +46,10 @@
   padding: 10px 25px;
 }
 
+.sidebar {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
   .home-links {
     display: none;
@@ -93,6 +97,66 @@
   .hd-header .menu .bars {
     color: black;
     font-size: 25px;
+  }
+  .overlay-side {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.541);
+    position: absolute;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    z-index: 1000;
+  }
+  .sidebar {
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    z-index: 2000;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    display: block;
+  }
+  .sidebar .bar {
+    height: 9vh;
+    border-bottom: 1px solid #5a5959;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .sidebar .bar span {
+    padding-right: 15px;
+    color: white;
+    font-size: 18px;
+  }
+  .sidebar .sidebar-links {
+    height: 100vh;
+  }
+  .sidebar .sidebar-links .nv-lk {
+    height: 12%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #5a5959;
+  }
+  .sidebar .sidebar-links .nv-lk .side-link-default {
+    color: white;
+    text-decoration: none;
+    margin-left: 19px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 200;
   }
 }
 /*# sourceMappingURL=Header.css.map */

@@ -31,6 +31,7 @@ const Home = () => {
   const [events, setevents] = useState([]);
   const [isLoading, setisLoading] = useState(false);
   const [timeup, settimeup] = useState(false);
+  const [sideBar, setsideBar] = useState(false);
   useEffect(() => {
     AOS.init();
     // setTimeout(() => {
@@ -113,8 +114,6 @@ const Home = () => {
       .catch((err) => console.log(err));
   };
 
-  
-
   const fetchEvents = () => {
     setisLoading(true);
     const url =
@@ -176,6 +175,40 @@ const Home = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  function disableScrolling() {
+    var x = window.scrollX;
+    var y = window.scrollY;
+    window.onscroll = function () {
+      window.scrollTo(x, y);
+    };
+  }
+
+  function enableScrolling() {
+    window.onscroll = function () {};
+  }
+
+  const open = {
+    transition: "all 0.5s ease-in-out",
+    height: "100vh",
+    width: "75%",
+    backgroundColor: "#242424",
+    transform: "translateX(0px)",
+  };
+
+  const close = {
+    transition: "all 0.5s ease-in-out",
+    height: "100%",
+    width: "0%",
+    backgroundColor: "white",
+    transform: "translateX(-300px)",
+  };
+
+  if (sideBar === false) {
+    enableScrolling();
+  } else {
+    disableScrolling();
+  }
 
   if (isLoading) {
     return (
@@ -298,7 +331,6 @@ const Home = () => {
           </NavLink>
         </section>
       </section>
-
       <button
         className="top-btn"
         onClick={() => {
