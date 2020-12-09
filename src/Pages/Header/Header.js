@@ -5,12 +5,14 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars, faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 const Header = () => {
+  const history = useHistory();
   const [navTrans, setnavTrans] = useState(false);
   const [sideBar, setsideBar] = useState(false);
 
@@ -25,12 +27,15 @@ const Header = () => {
   // };
 
   function disableScrolling() {
-    var x = window.scrollX;
-    var y = window.scrollY;
-    window.onscroll = function () {
-      window.scrollTo(x, y);
-    };
+    window.scrollTo(0, 0);
   }
+
+  
+  function noScroll() {
+    window.scrollTo(0, 0);
+  } // For Chrome, Firefox, IE and Opera
+
+ 
 
   function enableScrolling() {
     window.onscroll = function () {};
@@ -52,15 +57,15 @@ const Header = () => {
     transform: "translateX(-300px)",
   };
 
-  if (sideBar === false) {
-    enableScrolling();
+  if (sideBar) {
+    disableScrolling()
   } else {
-    disableScrolling();
+    enableScrolling()
   }
   return (
     <React.Fragment>
       <header className={`hd-header ${navTrans ? "hd-trans" : ""}`}>
-        <div className="home-logo">
+        <div onClick={() => history.push('/')} className="home-logo">
           <div className="img-logo">
             <img src={require("../../assets/Chaplain.jpg")} alt="" />
           </div>
@@ -100,10 +105,13 @@ const Header = () => {
         </div>
       </header>
     
-    <div className="overlay-side" style={{display: sideBar ? "block" : "none"}}></div>
+    <div onClick={() => setsideBar(false)} className="overlay-side" style={{display: sideBar ? "block" : "none"}}></div>
     
     <div className="sidebar" style={sideBar ? open : close}>
         <div className="bar">
+          <div className="img">
+            <img src={require('../../assets/NA.png')} alt=""/>
+          </div>
           <span onClick={() => setsideBar(false)}><FontAwesomeIcon
                           className="bars"
                           style={{ cursor: "pointer" }}

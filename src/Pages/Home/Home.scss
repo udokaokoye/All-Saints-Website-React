@@ -523,6 +523,7 @@ body, html {
     width: 100%;
     padding-top: 25px;
     padding-bottom: 25px;
+    margin: 0 auto;
     .img{
         width: 60%;
         margin: 0 auto;
@@ -653,6 +654,49 @@ body, html {
             span{
                 z-index: 1000;
             }
+        }
+    }
+
+    .lv_btn {
+        background: white;
+        padding: 25px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border: 1px solid black;
+        height: 50px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: all 0.5s ease;
+        // cursor: pointer;
+
+        .lv_btn_mn {
+           width: 100%; 
+           height: 100%;
+           transition: all 0.5s ease;
+
+           button {
+               cursor: pointer;
+               width: 100%;
+               height: 100%;
+               border: 1px solid transparent;
+               font-size: 25px;
+               background-color: transparent;
+               transition: all 0.5s ease;
+           }
+        }
+
+        &:hover {
+            background-color: transparent;
+            border: 1px solid white;
+            .lv_btn_mn {
+                button {
+                    color: white;
+                }
+             }
         }
     }
 }
@@ -877,6 +921,10 @@ body {
     .img{
         width: 100%;
         margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
     }
 
     .text{
@@ -986,6 +1034,78 @@ body {
     }
 }
 
+.overlay-side {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.541);
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    z-index: 1000;
+    top: 0;
+}
+
+.sidebar {
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    z-index: 2000;
+    transition: all 0.5s ease-in-out;
+    display: block;
+    top: 0;
+
+    .bar {
+        height: 14vh;
+        width: 100%;
+        border-bottom: 1px solid #5a5959;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span{
+            padding-right: 15px;
+            color: white;
+            font-size: 18px;
+            width: 10%;
+        }
+
+        .img {
+            width: 90%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+                width: 20%;
+                margin-left: 15px;
+            }
+        }
+       }
+
+
+   .sidebar-links {
+       height: 100vh;
+
+       .nv-lk {
+           height: 12%;
+           display: flex;
+           justify-content: flex-start;
+           align-items: center;
+           border-bottom: 1px solid #5a5959;
+        .side-link-default {
+            color: white;
+            text-decoration: none;
+            margin-left: 19px;
+            font-size: 20px;
+            font-family: 'Roboto';
+            font-weight: 200;
+        }
+       }
+
+       
+   }
+}
 }
 
 

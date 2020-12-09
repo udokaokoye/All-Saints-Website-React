@@ -61,6 +61,15 @@
   color: white;
 }
 
+.nav .menu {
+  display: none;
+}
+
+.nav .menu .bars {
+  color: white;
+  font-size: 25px;
+}
+
 .cnt .title {
   font-family: 'Roboto';
   font-weight: 200;
@@ -627,5 +636,220 @@
   border: 1px solid white;
   color: white;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav .tabs {
+    display: none;
+  }
+  .nav .menu {
+    display: block;
+  }
+  .cnt .title {
+    font-size: 30px;
+  }
+  .cnt .content {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cnt .content h3 {
+    text-align: center;
+  }
+  .cnt .content .cnt_main {
+    width: 82%;
+    margin: o auto;
+  }
+  .prayer_req .title {
+    font-size: 30px;
+  }
+  .prayer_req .content {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .prayer_req .content h3 {
+    text-align: center;
+  }
+  .prayer_req .content .cnt_main {
+    width: 82%;
+    margin: o auto;
+  }
+  .add_admin {
+    width: 100%;
+  }
+  .add_admin .message-box {
+    width: 75%;
+    margin-bottom: 20px;
+  }
+  .add_admin .form {
+    width: 100%;
+  }
+  .add_admin .form .inpt-div h3 {
+    text-align: center;
+  }
+  .add_admin .form .inpt-div .input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .add_admin .form .inpt-div .input .inpt1, .add_admin .form .inpt-div .input .inpt2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .add_admin .form .submit {
+    margin: 0 auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .add_admin .all_admin {
+    width: 100%;
+  }
+  .add_admin .all_admin .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .add_admin .all_admin .content .main_content {
+    width: 90%;
+  }
+  .add_editor {
+    width: 100%;
+  }
+  .add_editor .message-box {
+    width: 75%;
+    margin-bottom: 20px;
+  }
+  .add_editor .form {
+    width: 100%;
+  }
+  .add_editor .form .inpt-div h3 {
+    text-align: center;
+  }
+  .add_editor .form .inpt-div .input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .add_editor .form .inpt-div .input .inpt1, .add_editor .form .inpt-div .input .inpt2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .add_editor .form .submit {
+    margin: 0 auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .add_editor .all_editor {
+    width: 100%;
+  }
+  .add_editor .all_editor .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .add_editor .all_editor .content .main_content {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=Admin.css.map */

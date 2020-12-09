@@ -5,8 +5,9 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopyright, faAngleUp, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faCopyright, faAngleUp, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faYoutube,
@@ -18,6 +19,7 @@ import "aos/dist/aos.css";
 require("./Home.css");
 
 const Home = () => {
+  const history = useHistory();
   const [popup1, setpopup1] = useState([false]);
   const [cntd, setcntd] = useState({
     days: 0,
@@ -177,15 +179,19 @@ const Home = () => {
   };
 
   function disableScrolling() {
-    var x = window.scrollX;
-    var y = window.scrollY;
-    window.onscroll = function () {
-      window.scrollTo(x, y);
-    };
+    window.scrollTo(0, 0);
   }
 
   function enableScrolling() {
-    window.onscroll = function () {};
+    window.onscroll = () => {
+      if (window.scrollY > 10) {
+        setnavTrans(true);
+      }
+  
+      if (window.scrollY < 1) {
+        setnavTrans(false);
+      }
+    };
   }
 
   const open = {
@@ -204,10 +210,10 @@ const Home = () => {
     transform: "translateX(-300px)",
   };
 
-  if (sideBar === false) {
-    enableScrolling();
-  } else {
+  if (sideBar) {
     disableScrolling();
+  } else {
+    enableScrolling();
   }
 
   if (isLoading) {
@@ -233,7 +239,7 @@ const Home = () => {
       <section className="top">
         <div className="overlay"></div>
         <header className={`home-header ${navTrans ? "trans" : null}`}>
-          <div className="home-logo">
+          <div onClick={() => history.push('/')} className="home-logo">
             <div className="img-logo">
               <img src={require("../../assets/Chaplain.jpg")} alt="" />
             </div>
@@ -268,7 +274,7 @@ const Home = () => {
                           color="red"
                           className="bars"
                           style={{ cursor: "pointer" }}
-                          onClick={() => alert("Menu Bar")}
+                          onClick={() => setsideBar(true)}
                           icon={faBars}
                         />
         </div>
@@ -440,14 +446,17 @@ const Home = () => {
       </section>
 
       <section className="live">
+        <center>
         <div className="img">
           <img
-            src={require("../../assets/live2.png")}
-            width="100%"
+            src={misc['live_img']}
+            width={`${misc['live_img_width']}%`}
             height="100%"
             alt="chap"
           />
+          {/* {misc['live_img']} */}
         </div>
+        </center>
         <div className="text">
           <h1
             dangerouslySetInnerHTML={{
@@ -505,8 +514,13 @@ const Home = () => {
             </div>
           </div>
         ) : (
-          ""
+          <div className="lv_btn">
+          <NavLink className='lv_btn_mn' to='/live'>
+          <button>Watch Service Live</button>
+          </NavLink>
+        </div>
         )}
+        
       </section>
 
       <section
@@ -540,6 +554,59 @@ const Home = () => {
           <FontAwesomeIcon icon={faCopyright} /> 2020 Copyright - Cathedral
         </p>
       </section>
+      
+      
+      <div onClick={() => setsideBar(false)} className="overlay-side" style={{display: sideBar ? "block" : "none"}}></div>
+
+      <div className="sidebar" style={sideBar ? open : close}>
+        <div className="bar">
+        <div className="img">
+            <img src={require('../../assets/NA.png')} alt=""/>
+          </div>
+          <span onClick={() => setsideBar(false)}><FontAwesomeIcon
+                          className="bars"
+                          style={{ cursor: "pointer" }}
+                          icon={faTimes}
+                        /></span>
+        </div>
+        <div className="sidebar-links">
+          <div className="nv-lk">
+          <NavLink activeClassName={'side-active'} className="side-link-default lnk" to="/">
+              Home
+            </NavLink>
+          </div>
+
+          <div className="nv-lk">
+          <NavLink activeClassName={'side-active'} className="side-link-default lnk2" to="/events">
+              Events
+            </NavLink>
+          </div>
+
+          <div className="nv-lk">
+          <NavLink activeClassName={'side-active'} className="side-link-default lnk3" to="/sermon">
+              Sermon
+            </NavLink>
+          </div>
+
+          <div className="nv-lk">
+          <NavLink activeClassName={'side-active'} className="side-link-default lnk4" to="/dss">
+              Dss
+            </NavLink>
+          </div>
+
+          <div className="nv-lk">
+          <NavLink activeClassName={'side-active'} className="side-link-default lnk5" to="/contact">
+              Contact
+            </NavLink>
+          </div>
+
+          <div className="nv-lk">
+          <NavLink activeClassName={'side-active'} className="side-link-default lnk6" to="/giving">
+              Give
+            </NavLink>
+          </div>
+        </div>
+        </div>
       </div>
     </React.Fragment>
   );

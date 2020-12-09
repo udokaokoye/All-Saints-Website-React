@@ -63,6 +63,10 @@
             }
         }
         }
+
+        .menu {
+            display: none;
+        }
     }
 
     .misc {
@@ -575,4 +579,155 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+    .editor {
+    width: 100%;
+    .nav {
+        // display: none;
+
+        .logo {
+            h1 {
+                font-size: 22px;
+            }
+        }
+
+        .tabs {
+            display: none;
+        }
+
+        .menu {
+            display: block;
+
+            .bars {
+                font-size: 26px;
+                color: white;
+            }
+        }
+    }
+
+    .misc {
+        width: 100%;
+
+        .title {
+            padding: 25px 0;
+            font-size: 25px;
+        }
+
+        .message-box {
+            width: 75%;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            width: 100%;
+
+            .inpt-div {
+                width: 100%;
+
+                .input {
+                    // background-color: red;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;                    
+                    .inpt1, .inpt2 {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        input {
+                            width: 80%;
+                            text-align: center;
+                        }
+
+                        textarea {
+                            width: 80%;
+                        }
+
+                        // small {
+                        //     display: none;
+                        // }
+
+                        
+                    }
+                }
+            }
+
+            .submit {
+                margin: 0 auto;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .event {
+        width: 100%;
+        .message-box {
+            width: 75%;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            width: 100%;
+
+            .inpt-div {
+                h3 {
+                    text-align: center;
+                }
+            }
+
+            .input {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .inpt1, .inpt2 {
+                    display: flex;
+                    flex-direction:  column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+
+                }
+            }
+
+            .submit {
+                margin: 0 auto;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .view_evt_div {
+            .message-box {
+                width: 75%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .dss { 
+        width: 100%;
+
+        .message-box {
+            width: 75%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
 }

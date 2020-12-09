@@ -608,6 +608,7 @@ body, html {
   width: 100%;
   padding-top: 25px;
   padding-bottom: 25px;
+  margin: 0 auto;
 }
 
 .live .img {
@@ -763,6 +764,59 @@ body, html {
 
 .coming-event .starts-in:hover span {
   z-index: 1000;
+}
+
+.coming-event .lv_btn {
+  background: white;
+  padding: 25px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 1px solid black;
+  height: 50px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.coming-event .lv_btn .lv_btn_mn {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.coming-event .lv_btn .lv_btn_mn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  font-size: 25px;
+  background-color: transparent;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.coming-event .lv_btn:hover {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.coming-event .lv_btn:hover .lv_btn_mn button {
+  color: white;
 }
 
 .popup1 {
@@ -983,6 +1037,9 @@ body, html {
     width: 100%;
     margin: 0 auto;
   }
+  .live .img img {
+    width: 100%;
+  }
   .live .text {
     border-top: 11px solid red;
     padding-top: 15px;
@@ -1086,6 +1143,88 @@ body, html {
     text-align: center;
     padding: 12px;
     font-size: 20px;
+  }
+  .overlay-side {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.541);
+    position: absolute;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    z-index: 1000;
+    top: 0;
+  }
+  .sidebar {
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    z-index: 2000;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    display: block;
+    top: 0;
+  }
+  .sidebar .bar {
+    height: 14vh;
+    width: 100%;
+    border-bottom: 1px solid #5a5959;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .sidebar .bar span {
+    padding-right: 15px;
+    color: white;
+    font-size: 18px;
+    width: 10%;
+  }
+  .sidebar .bar .img {
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .sidebar .bar .img img {
+    width: 20%;
+    margin-left: 15px;
+  }
+  .sidebar .sidebar-links {
+    height: 100vh;
+  }
+  .sidebar .sidebar-links .nv-lk {
+    height: 12%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #5a5959;
+  }
+  .sidebar .sidebar-links .nv-lk .side-link-default {
+    color: white;
+    text-decoration: none;
+    margin-left: 19px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 200;
   }
 }
 /*# sourceMappingURL=Home.css.map */

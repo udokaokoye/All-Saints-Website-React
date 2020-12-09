@@ -20,6 +20,7 @@ import Live from "./Pages/Live/Live";
 import AdminAuth from './Pages/Admin/Auth/Auth';
 import Admin from './Pages/Admin/Logged/Admin';
 import Give from './Pages/Give/Give';
+import Footer from './Pages/Footer/Footer';
 function App() {
   return (
     <Router>
@@ -51,6 +52,7 @@ function App() {
                 <div className="page">
                   <Header />
                   <Contact />
+                  <Footer />
                 </div>
               </CSSTransition>
             )}
@@ -67,6 +69,7 @@ function App() {
                 <div className="page">
                   <Header />
                   <Events />
+                  <Footer />
                 </div>
               </CSSTransition>
             )}
@@ -83,6 +86,7 @@ function App() {
                 <div className="page">
                   <Header />
                   <Sermon />
+                  <Footer />
                 </div>
               </CSSTransition>
             )}
@@ -99,6 +103,7 @@ function App() {
                 <div className="page">
                   <Header />
                   <Dss />
+                  <Footer />
                 </div>
               </CSSTransition>
             )}
@@ -175,6 +180,7 @@ function App() {
                 <div className="page">
                   <Header />
                   <Live />
+                  <Footer />
                 </div>
               </CSSTransition>
             )}
@@ -191,6 +197,7 @@ function App() {
                 <div className="page">
                   <Header />
                   <Give />
+                  <Footer />
                 </div>
               </CSSTransition>
             )}

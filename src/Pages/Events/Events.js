@@ -91,34 +91,21 @@ const Events = () => {
       </section>
 
       <section className="evntprop">
-        <div className="overlay"></div>
-
+          <h1 className='evt_lu'>Events Line Up</h1>
         <div className="content">
-          {events.slice(0, 4).map((evt) => {
+        {events.slice(0, 4).map((evt) => {
             return (
-              <div className="evt1">
-                <div className="calendar">
-                  <span className="dt-no">
-                    {moment(evt.evt_date).format("D")}
-                  </span>
-                  <span className="dt-nm">
-                    {moment(evt.evt_date).format("MMM")}
-                  </span>
-                </div>
-                <div className="evtnm">
-                  <h1>{evt.evt_title}</h1>
-                </div>
-
-                <div className="dt-loc">
-                  <p>
-                    {evt.evt_time}{" "}
-                    {evt.evt_time.substring(0, 2) > 12 ? "pm" : "am"}
-                  </p>
-                  <p>@ The Cathedral</p>
-                </div>
-
-                <button>Read More</button>
-              </div>
+              <div className="evt_main">
+            <div className="cal">
+              <span className="dt-no">{moment(evt.evt_date).format("D")}</span>
+              <span className="dt-nm">{moment(evt.evt_date).format("MMM")}</span>
+            </div>
+            <div className="inf">
+              <h3 className='evtnm'>{evt.evt_title}</h3>
+              <span className='evt_tm'>{evt.evt_time}{" "}
+                    {evt.evt_time.substring(0, 2) > 12 ? "pm" : "am"}</span>
+            </div>
+          </div>
             );
           })}
         </div>

@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
 import "./Editor.css";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faThumbsUp, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 const Editor = () => {
+  const [sideBar, setsideBar] = useState(false)
   const [misc, setmisc] = useState(true);
   const [evt, setevt] = useState(false);
   const [dss, setdss] = useState(false);
@@ -14,7 +21,8 @@ const Editor = () => {
   // MISC
   const [showcase_txt, setshowcase_txt] = useState("");
   const [banner_text, setbanner_text] = useState("");
-  const [live_img, setlive_img] = useState("----");
+  const [live_img, setlive_img] = useState("");
+  const [live_img_width, setlive_img_width] = useState("");
   const [live_txt, setlive_txt] = useState("");
   const [cnt_phn, setcnt_phn] = useState("");
   const [cnt_email, setcnt_email] = useState("");
@@ -51,6 +59,43 @@ const Editor = () => {
     fetchChat();
     reFetchChats();
   }, []);
+
+  function disableScrolling() {
+    window.scrollTo(0, 0);
+  }
+
+  window.scrollTo(0, 0);
+  function noScroll() {
+    window.scrollTo(0, 0);
+  } // For Chrome, Firefox, IE and Opera
+
+ 
+
+  function enableScrolling() {
+    window.onscroll = function () {};
+  }
+
+  const open = {
+    transition: "all 0.5s ease-in-out",
+    height: "100vh",
+    width: "75%",
+    backgroundColor: "#242424",
+    transform: "translateX(0px)",
+  };
+
+  const close = {
+    transition: "all 0.5s ease-in-out",
+    height: "100%",
+    width: "0%",
+    backgroundColor: "white",
+    transform: "translateX(-300px)",
+  };
+
+  if (sideBar) {
+    disableScrolling()
+  } else {
+    enableScrolling()
+  }
 
   const Logout = () => {
     removeCookie("user", { path: "/" });
@@ -95,6 +140,12 @@ const Editor = () => {
     formData.append("cnt_phone", cnt_phn);
     formData.append("cnt_email", cnt_email);
     formData.append("live_service", live_service);
+    formData.append("live_img_width", live_img_width)
+    var image = document.getElementById("live_service_banner").files;
+
+    if (image[0] != null) {
+      formData.append("live_img", image[0]);
+    }
     setisLoading(true);
     const url = "http://localhost/All%20Saints%20Backend/misc.php";
     fetch(url, {
@@ -217,6 +268,8 @@ const Editor = () => {
         setcnt_phn(res["cnt_phone"]);
         setcnt_email(res["cnt_email"]);
         setlive_service(res["live_service"]);
+        setlive_img(res['live_img'])
+        setlive_img_width(res['live_img_width']);
         setisLoading(false);
       })
       .catch((err) => console.log(err));
@@ -387,6 +440,16 @@ const Editor = () => {
             </button>
           </div>
         </div>
+
+        <div className="menu">
+        <FontAwesomeIcon
+                          color="red"
+                          className="bars"
+                          style={{ cursor: "pointer" }}
+                          onClick={() => sideBar ? setsideBar(false) : setsideBar(true)}
+                          icon={faBars}
+                        />
+        </div>
       </div>
 
       {misc ? (
@@ -439,7 +502,7 @@ const Editor = () => {
               <h3>Live Service Banner</h3>
               <div className="input">
                 <div className="inpt1">
-                  <input type="file" name="" id="" />
+                  <input type="file" name="" id="live_service_banner" />
                   <small>please select a file</small>
                 </div>
 
@@ -452,6 +515,17 @@ const Editor = () => {
                     id=""
                   />
                   <small>Image Text</small>
+                </div>
+
+                <div className="inpt2">
+                  <input
+                    value={live_img_width}
+                    onChange={(val) => setlive_img_width(val.target.value)}
+                    type="text"
+                    name=""
+                    id=""
+                  />
+                  <small>Image width in %</small>
                 </div>
               </div>
             </div>
@@ -519,7 +593,6 @@ const Editor = () => {
           ) : (
             ""
           )}
-          <button className="view_evt">View Events</button>
           <div className="form">
             <div className="inpt-div">
               <h3>Event Title</h3>
@@ -704,6 +777,87 @@ const Editor = () => {
       ) : (
         ""
       )}
+
+
+<div onClick={() => setsideBar(false)} className="overlay-side" style={{display: sideBar ? "block" : "none"}}></div>
+    
+    <div className="sidebar" style={sideBar ? open : close}>
+        <div className="bar">
+          <div className="img">
+            <img src={require('../../../assets/NA.png')} alt=""/>
+          </div>
+          <span onClick={() => setsideBar(false)}><FontAwesomeIcon
+                          className="bars"
+                          style={{ cursor: "pointer" }}
+                          icon={faTimes}
+                        /></span>
+        </div>
+        <div className="sidebar-links">
+          <div className="nv-lk">
+          <button
+              onClick={() => {
+                setmisc(true);
+                setevt(false);
+                setdss(false);
+                setchat(false);
+                setsideBar(false)
+              }}
+            >
+              Misc
+            </button>
+          </div>
+
+          <div className="nv-lk">
+          <button
+              onClick={() => {
+                setmisc(false);
+                setevt(true);
+                setdss(false);
+                setchat(false);
+                setsideBar(false)
+              }}
+            >
+              Add Events
+            </button>
+          </div>
+
+          <div className="nv-lk">
+          <button
+              onClick={() => {
+                setmisc(false);
+                setevt(false);
+                setdss(true);
+                setchat(false);
+                setsideBar(false)
+              }}
+            >
+              Add Dss
+            </button>
+          </div>
+
+          <div className="nv-lk">
+          <button
+              onClick={() => {
+                setmisc(false);
+                setevt(false);
+                setdss(false);
+                setchat(true);
+                setsideBar(false)
+              }}
+            >
+              Chat
+            </button>
+          </div>
+
+          <div className="nv-lk">
+          <button style={{backgroundColor: 'red'}} className="logout" onClick={Logout}>
+              Logout
+            </button>
+          </div>
+
+         
+        </div>
+    </div>
     </div>
   );
 };

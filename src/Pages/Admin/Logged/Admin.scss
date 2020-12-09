@@ -45,6 +45,15 @@
         }
     }
     }
+
+    .menu {
+        display: none;
+
+        .bars {
+            color: white;
+            font-size: 25px;
+        }
+    }
 }
 
 .cnt {
@@ -532,4 +541,173 @@
         }
     }
 
+}
+
+@media only screen and (max-width: 768px) {
+
+.nav {
+    // display: none;
+
+    .tabs {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+}
+
+.cnt {
+
+    .title {
+        font-size: 30px;
+    }
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h3 {
+            // display: none;
+            text-align: center;
+        }
+
+        .cnt_main {
+            width: 82%;
+            margin: o auto;
+        }
+    }
+}
+
+.prayer_req {
+
+    .title {
+        font-size: 30px;
+    }
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h3 {
+            // display: none;
+            text-align: center;
+        }
+
+        .cnt_main {
+            width: 82%;
+            margin: o auto;
+        }
+    }
+}
+
+.add_admin {
+    width: 100%;
+
+    .message-box {
+        width: 75%;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        width: 100%;
+
+        .inpt-div {
+            h3 {
+                text-align: center;
+            }
+            .input {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .inpt1, .inpt2 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .submit {
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .all_admin {
+        width: 100%;
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .main_content {
+                width: 90%;
+            }
+        }
+    }
+}
+
+.add_editor {
+    width: 100%;
+
+    .message-box {
+        width: 75%;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        width: 100%;
+
+        .inpt-div {
+            h3 {
+                text-align: center;
+            }
+            .input {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .inpt1, .inpt2 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .submit {
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .all_editor {
+        width: 100%;
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .main_content {
+                width: 90%;
+            }
+        }
+    }
+}
 }

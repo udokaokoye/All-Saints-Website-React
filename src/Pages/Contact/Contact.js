@@ -15,6 +15,10 @@ const Contact = () => {
   const [isLoading, setisLoading] = useState(false);
   useEffect(() => {
     fetchMisc();
+    function noScroll() {
+      window.scrollTo(0, 0);
+    }
+    window.removeEventListener('scroll', noScroll);
   }, []);
 
   const submitContact = () => {

@@ -82,6 +82,10 @@
   color: white;
 }
 
+.editor .nav .menu {
+  display: none;
+}
+
 .editor .misc {
   width: 70%;
   margin: 0 auto;
@@ -690,5 +694,163 @@
 
 .editor .chats .content .main_content .like {
   background-color: #2525c9;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .editor {
+    width: 100%;
+  }
+  .editor .nav .logo h1 {
+    font-size: 22px;
+  }
+  .editor .nav .tabs {
+    display: none;
+  }
+  .editor .nav .menu {
+    display: block;
+  }
+  .editor .nav .menu .bars {
+    font-size: 26px;
+    color: white;
+  }
+  .editor .misc {
+    width: 100%;
+  }
+  .editor .misc .title {
+    padding: 25px 0;
+    font-size: 25px;
+  }
+  .editor .misc .message-box {
+    width: 75%;
+    margin-bottom: 20px;
+  }
+  .editor .misc .form {
+    width: 100%;
+  }
+  .editor .misc .form .inpt-div {
+    width: 100%;
+  }
+  .editor .misc .form .inpt-div .input {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .editor .misc .form .inpt-div .input .inpt1, .editor .misc .form .inpt-div .input .inpt2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .editor .misc .form .inpt-div .input .inpt1 input, .editor .misc .form .inpt-div .input .inpt2 input {
+    width: 80%;
+    text-align: center;
+  }
+  .editor .misc .form .inpt-div .input .inpt1 textarea, .editor .misc .form .inpt-div .input .inpt2 textarea {
+    width: 80%;
+  }
+  .editor .misc .form .submit {
+    margin: 0 auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .editor .event {
+    width: 100%;
+  }
+  .editor .event .message-box {
+    width: 75%;
+    margin-bottom: 20px;
+  }
+  .editor .event .form {
+    width: 100%;
+  }
+  .editor .event .form .inpt-div h3 {
+    text-align: center;
+  }
+  .editor .event .form .input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .editor .event .form .input .inpt1, .editor .event .form .input .inpt2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .editor .event .form .submit {
+    margin: 0 auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .editor .event .view_evt_div .message-box {
+    width: 75%;
+    margin-bottom: 20px;
+  }
+  .editor .dss {
+    width: 100%;
+  }
+  .editor .dss .message-box {
+    width: 75%;
+    margin-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=Editor.css.map */

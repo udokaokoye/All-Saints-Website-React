@@ -168,6 +168,11 @@
   padding: 5px;
 }
 
+.give-form .form .name .input .inpt1 textarea, .give-form .form .name .input .inpt2 textarea, .give-form .form .phone .input .inpt1 textarea, .give-form .form .phone .input .inpt2 textarea, .give-form .form .email .input .inpt1 textarea, .give-form .form .email .input .inpt2 textarea, .give-form .form .message .input .inpt1 textarea, .give-form .form .message .input .inpt2 textarea {
+  width: 100%;
+  height: 65px;
+}
+
 .give-form .form .name .input .inpt1 small, .give-form .form .name .input .inpt2 small, .give-form .form .phone .input .inpt1 small, .give-form .form .phone .input .inpt2 small, .give-form .form .email .input .inpt1 small, .give-form .form .email .input .inpt2 small, .give-form .form .message .input .inpt1 small, .give-form .form .message .input .inpt2 small {
   opacity: 0.7;
 }

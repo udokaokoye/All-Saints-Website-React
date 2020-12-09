@@ -117,14 +117,15 @@
     display: block;
   }
   .sidebar .bar {
-    height: 9vh;
+    height: 14vh;
+    width: 100%;
     border-bottom: 1px solid #5a5959;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -133,6 +134,25 @@
     padding-right: 15px;
     color: white;
     font-size: 18px;
+    width: 10%;
+  }
+  .sidebar .bar .img {
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .sidebar .bar .img img {
+    width: 20%;
+    margin-left: 15px;
   }
   .sidebar .sidebar-links {
     height: 100vh;
@@ -157,6 +177,14 @@
     font-size: 20px;
     font-family: 'Roboto';
     font-weight: 200;
+  }
+  .sidebar .sidebar-links .nv-lk button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
   }
 }
 /*# sourceMappingURL=Header.css.map */

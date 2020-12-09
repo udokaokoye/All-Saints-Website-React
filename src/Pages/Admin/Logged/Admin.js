@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./Admin.css";
 const Admin = () => {
+  const [sideBar, setsideBar] = useState(false)
   const [cookies, setCookie, removeCookie] = useCookies(["admin"]);
   const history = useHistory();
   const [contact, setcontact] = useState(true);
@@ -37,6 +40,37 @@ const Admin = () => {
     fetchEditor();
     fetchAdmin();
   }, []);
+
+  function disableScrolling() {
+    window.scrollTo(0, 0);
+  }
+
+  window.scrollTo(0, 0);
+  function noScroll() {
+    window.scrollTo(0, 0);
+  } // For Chrome, Firefox, IE and Opera
+
+ 
+
+  function enableScrolling() {
+    window.onscroll = function () {};
+  }
+
+  const open = {
+    transition: "all 0.5s ease-in-out",
+    height: "100vh",
+    width: "75%",
+    backgroundColor: "#242424",
+    transform: "translateX(0px)",
+  };
+
+  const close = {
+    transition: "all 0.5s ease-in-out",
+    height: "100%",
+    width: "0%",
+    backgroundColor: "white",
+    transform: "translateX(-300px)",
+  };
 
   const verify = () => {
     setisLoading(true);
@@ -338,6 +372,16 @@ const Admin = () => {
             </button>
           </div>
         </div>
+
+        <div className="menu">
+        <FontAwesomeIcon
+                          color="red"
+                          className="bars"
+                          style={{ cursor: "pointer" }}
+                          onClick={() => sideBar ? setsideBar(false) : setsideBar(true)}
+                          icon={faBars}
+                        />
+        </div>
       </div>
 
       {contact ? (
@@ -634,6 +678,86 @@ const Admin = () => {
       ) : (
         ""
       )}
+
+<div onClick={() => setsideBar(false)} className="overlay-side" style={{display: sideBar ? "block" : "none"}}></div>
+    
+    <div className="sidebar" style={sideBar ? open : close}>
+        <div className="bar">
+          <div className="img">
+            <img src={require('../../../assets/NA.png')} alt=""/>
+          </div>
+          <span onClick={() => setsideBar(false)}><FontAwesomeIcon
+                          className="bars"
+                          style={{ cursor: "pointer" }}
+                          icon={faTimes}
+                        /></span>
+        </div>
+        <div className="sidebar-links">
+          <div className="nv-lk">
+          <button
+              onClick={() => {
+                setcontact(true);
+                setprayer_Req(false);
+                setadd_admin(false);
+                setadd_editor(false);
+                setsideBar(false)
+              }}
+            >
+              Contacts
+            </button>
+          </div>
+
+          <div className="nv-lk">
+          <button
+              onClick={() => {
+                setcontact(false);
+                setprayer_Req(true);
+                setadd_admin(false);
+                setadd_editor(false);
+                setsideBar(false)
+              }}
+            >
+              Prayer Requests
+            </button>
+          </div>
+
+          <div className="nv-lk">
+          <button
+              onClick={() => {
+                setcontact(false);
+                setprayer_Req(false);
+                setadd_admin(true);
+                setadd_editor(false);
+                setsideBar(false)
+              }}
+            >
+              Add Admin
+            </button>
+          </div>
+
+          <div className="nv-lk">
+          <button
+              onClick={() => {
+                setcontact(false);
+                setprayer_Req(false);
+                setadd_admin(false);
+                setadd_editor(true);
+                setsideBar(false)
+              }}
+            >
+              Add Editor
+            </button>
+          </div>
+
+          <div className="nv-lk">
+          <button style={{backgroundColor: 'red'}} className="logout" onClick={Logout}>
+              Logout
+            </button>
+          </div>
+
+         
+        </div>
+    </div>
     </div>
   );
 };
