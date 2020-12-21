@@ -88,7 +88,7 @@ const Home = () => {
     setisLoading(true);
 
     const url =
-      "http://localhost/All%20Saints%20Backend/random.php?qr=showcase_text";
+      "http://192.168.1.112/All%20Saints%20Backend/random.php?qr=showcase_text";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -103,7 +103,7 @@ const Home = () => {
   const fetchMisc = () => {
     const formData = new FormData();
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/random.php?qr=all";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -119,7 +119,7 @@ const Home = () => {
   const fetchEvents = () => {
     setisLoading(true);
     const url =
-      "http://localhost/All%20Saints%20Backend/event.php?mode=dwl-ord";
+      "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=dwl-ord";
     fetch(url, {
       method: "POST",
     })

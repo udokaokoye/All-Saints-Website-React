@@ -69,7 +69,7 @@ function App() {
                 <div className="page">
                   <Header />
                   <Events />
-                  <Footer />
+                  {/* <Footer /> */}
                 </div>
               </CSSTransition>
             )}
@@ -180,7 +180,7 @@ function App() {
                 <div className="page">
                   <Header />
                   <Live />
-                  <Footer />
+                  {/* <Footer /> */}
                 </div>
               </CSSTransition>
             )}

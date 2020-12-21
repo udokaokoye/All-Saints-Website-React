@@ -15,7 +15,7 @@ const Events = () => {
   const fetchEvents = () => {
     setisLoading(true);
     const url =
-      "http://localhost/All%20Saints%20Backend/event.php?mode=dwl-ord";
+      "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=dwl-ord";
     fetch(url, {
       method: "POST",
     })

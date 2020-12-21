@@ -207,7 +207,7 @@
   }
   .live .main .left {
     width: 100%;
-    height: 25vh;
+    height: 30vh;
     padding: 0;
   }
 }
@@ -215,7 +215,31 @@
 @media only screen and (max-width: 414px) {
   .live .main .right {
     width: 100%;
-    height: 60vh;
+    height: 45vh;
+  }
+  .live .main .left {
+    width: 100%;
+    height: 40vh;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .live .main .right {
+    width: 100%;
+    height: 45vh;
+  }
+  .live .main .left {
+    width: 100%;
+    height: 42vh;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .live .main .right {
+    width: 100%;
+    height: 45vh;
   }
   .live .main .left {
     width: 100%;

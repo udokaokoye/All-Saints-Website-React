@@ -25,7 +25,7 @@ const Live = () => {
   const fetchMisc = () => {
     const formData = new FormData();
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/random.php?qr=all";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -53,7 +53,7 @@ const Live = () => {
     const formData = new FormData();
     formData.append("chat", chat);
     formData.append("user", localStorage.getItem("cht_user"));
-    const url = "http://localhost/All%20Saints%20Backend/chat.php?qr=upl";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/chat.php?qr=upl";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -68,7 +68,7 @@ const Live = () => {
   };
 
   const fetchChat = () => {
-    const url = "http://localhost/All%20Saints%20Backend/chat.php?qr=dwl";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/chat.php?qr=dwl";
     fetch(url, {
       method: "POST",
     })
@@ -90,7 +90,7 @@ const Live = () => {
     if (isDel === false) {
       return;
     }
-    const url = `http://localhost/All%20Saints%20Backend/delete.php?table=${table}`;
+    const url = `http://192.168.1.112/All%20Saints%20Backend/delete.php?table=${table}`;
 
     const formData = new FormData();
     formData.append("id", id);
@@ -108,7 +108,7 @@ const Live = () => {
   const checkLiveUser = (live_user) => {
     const formData = new FormData();
     formData.append("user", live_user);
-    const url = "http://localhost/All%20Saints%20Backend/check_user.php";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/check_user.php";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -174,8 +174,8 @@ const Live = () => {
             </button>
           </div>
          ) : ''}
-         {bible_div ? (
-            <div className="content">
+         
+            <div style={{display: bible_div ? "block" : 'none'}} className="content">
               <iframe
                 src="https://chop.bible.com/bible"
                 height="100%"
@@ -183,9 +183,6 @@ const Live = () => {
                 frameborder="0"
               ></iframe>
             </div>
-          ) : (
-            ""
-          )}
 
           {chat_div ? (
             <div className="content">

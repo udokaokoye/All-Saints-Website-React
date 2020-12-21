@@ -5,7 +5,7 @@ import { faCopyright, faAngleUp, faBars, faTimes } from "@fortawesome/free-solid
 const Footer = () => {
     return (
         <div>
-            <section className="footer">
+            <section className="footer-ft">
         <p>
           <FontAwesomeIcon icon={faCopyright} /> 2020 Copyright - Cathedral
         </p>

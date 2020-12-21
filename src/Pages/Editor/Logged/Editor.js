@@ -64,7 +64,7 @@ const Editor = () => {
     window.scrollTo(0, 0);
   }
 
-  window.scrollTo(0, 0);
+  
   function noScroll() {
     window.scrollTo(0, 0);
   } // For Chrome, Firefox, IE and Opera
@@ -106,7 +106,7 @@ const Editor = () => {
     setisLoading(true);
     if (cookies.user) {
       const url =
-        "http://localhost/All%20Saints%20Backend/verify.php?mode=already_logged";
+        "http://192.168.1.112/All%20Saints%20Backend/verify.php?mode=already_logged";
 
       const formData = new FormData();
       formData.append("user_id", cookies.user);
@@ -147,7 +147,7 @@ const Editor = () => {
       formData.append("live_img", image[0]);
     }
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/misc.php";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/misc.php";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -198,7 +198,7 @@ const Editor = () => {
     formData.append("evt_date", evt_date);
     formData.append("evt_time", evt_time);
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/event.php?mode=upl";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=upl";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -234,7 +234,7 @@ const Editor = () => {
     formData.append("dss_date", dss_date);
     formData.append("dss_content", dss_content);
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/dss.php?mode=upl";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/dss.php?mode=upl";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -254,7 +254,7 @@ const Editor = () => {
   const fetchMisc = () => {
     const formData = new FormData();
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/random.php?qr=all";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -277,7 +277,7 @@ const Editor = () => {
 
   const fetchEvents = () => {
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/event.php?mode=dwl";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=dwl";
     fetch(url, {
       method: "POST",
     })
@@ -294,7 +294,7 @@ const Editor = () => {
     const formData = new FormData();
     formData.append("id", id);
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/event.php?mode=del";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=del";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -314,7 +314,7 @@ const Editor = () => {
 
   const fetchChat = () => {
     // setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/chat.php?qr=dwl-ord";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/chat.php?qr=dwl-ord";
     fetch(url, {
       method: "POST",
     })
@@ -333,7 +333,7 @@ const Editor = () => {
       setisLoading(false);
       return;
     }
-    const url = `http://localhost/All%20Saints%20Backend/delete.php?table=${table}`;
+    const url = `http://192.168.1.112/All%20Saints%20Backend/delete.php?table=${table}`;
 
     const formData = new FormData();
     formData.append("id", id);
@@ -355,7 +355,7 @@ const Editor = () => {
   };
 
   const likeChat = (id) => {
-    const url = `http://localhost/All%20Saints%20Backend/like.php?mode=upl`;
+    const url = `http://192.168.1.112/All%20Saints%20Backend/like.php?mode=upl`;
 
     const formData = new FormData();
     formData.append("chat_id", id);

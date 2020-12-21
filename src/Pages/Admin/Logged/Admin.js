@@ -76,7 +76,7 @@ const Admin = () => {
     setisLoading(true);
     if (cookies.admin) {
       const url =
-        "http://localhost/All%20Saints%20Backend/verify.php?mode=admin";
+        "http://192.168.1.112/All%20Saints%20Backend/verify.php?mode=admin";
 
       const formData = new FormData();
       formData.append("admin_id", cookies.admin);
@@ -107,7 +107,7 @@ const Admin = () => {
 
   const fetchContact = () => {
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/fetch_contact.php";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/fetch_contact.php";
 
     fetch(url, {
       method: "POST",
@@ -123,7 +123,7 @@ const Admin = () => {
 
   const fetchPrayerRequest = () => {
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/fetch_prayer.php";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/fetch_prayer.php";
 
     fetch(url, {
       method: "POST",
@@ -143,7 +143,7 @@ const Admin = () => {
       setisLoading(false);
       return;
     }
-    const url = `http://localhost/All%20Saints%20Backend/delete.php?table=${table}`;
+    const url = `http://192.168.1.112/All%20Saints%20Backend/delete.php?table=${table}`;
 
     const formData = new FormData();
     formData.append("id", id);
@@ -182,7 +182,7 @@ const Admin = () => {
       return;
     }
     setisLoading(true);
-    const url = `http://localhost/All%20Saints%20Backend/add_user.php?user=editor`;
+    const url = `http://192.168.1.112/All%20Saints%20Backend/add_user.php?user=editor`;
 
     const formData = new FormData();
     formData.append("lastname", edt_lastname);
@@ -226,7 +226,7 @@ const Admin = () => {
       return;
     }
     setisLoading(true);
-    const url = `http://localhost/All%20Saints%20Backend/add_user.php?user=admin`;
+    const url = `http://192.168.1.112/All%20Saints%20Backend/add_user.php?user=admin`;
 
     const formData = new FormData();
     formData.append("lastname", adm_lastname);
@@ -250,7 +250,7 @@ const Admin = () => {
 
   const fetchEditor = () => {
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/user.php?qr=editor";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/user.php?qr=editor";
 
     fetch(url, {
       method: "POST",
@@ -265,7 +265,7 @@ const Admin = () => {
 
   const fetchAdmin = () => {
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/user.php?qr=admin";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/user.php?qr=admin";
 
     fetch(url, {
       method: "POST",
@@ -285,7 +285,7 @@ const Admin = () => {
       setisLoading(false);
       return;
     }
-    const url = `http://localhost/All%20Saints%20Backend/user.php?del=${table}`;
+    const url = `http://192.168.1.112/All%20Saints%20Backend/user.php?del=${table}`;
 
     const formData = new FormData();
     formData.append("id", id);

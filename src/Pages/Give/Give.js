@@ -31,7 +31,7 @@ const Give = () => {
         text: "Pay Now",
     
         onSuccess: () => {
-            const url = `http://localhost/All%20Saints%20Backend/payment.php`;
+            const url = `http://192.168.1.112/All%20Saints%20Backend/payment.php`;
 
             const formData = new FormData();
             formData.append("ref_id", paystackProps.reference);

@@ -18,7 +18,7 @@ const Auth = () => {
     setisLoading(true);
     if (cookies.user) {
       const url =
-        "http://localhost/All%20Saints%20Backend/verify.php?mode=already_logged";
+        "http://192.168.1.112/All%20Saints%20Backend/verify.php?mode=already_logged";
 
       const formData = new FormData();
       formData.append("user_id", cookies.user);
@@ -56,7 +56,7 @@ const Auth = () => {
     formData.append("email", email);
     formData.append("password", password);
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/auth.php?auth=editor";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/auth.php?auth=editor";
     fetch(url, {
       method: "POST",
       body: formData,

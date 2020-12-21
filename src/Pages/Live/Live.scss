@@ -156,9 +156,7 @@
                 .chat {
                     height: 90%;
                 }
-                .inpt {
-
-                }
+                
             }
         }
 
@@ -240,7 +238,7 @@
             .left {
                 // background-color: red;
                 width: 100%;
-                height: 25vh;
+                height: 30vh;
                 padding: 0;
             }
         }
@@ -252,7 +250,45 @@
         .main {
             .right {
                 width: 100%;
-                height: 60vh;
+                height: 45vh;
+                // background-color: red;
+            }
+    
+            .left {
+                // background-color: red;
+                width: 100%;
+                height: 40vh;
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .live {
+        .main {
+            .right {
+                width: 100%;
+                height: 45vh;
+                // background-color: red;
+            }
+    
+            .left {
+                // background-color: red;
+                width: 100%;
+                height: 42vh;
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .live {
+        .main {
+            .right {
+                width: 100%;
+                height: 45vh;
                 // background-color: red;
             }
     

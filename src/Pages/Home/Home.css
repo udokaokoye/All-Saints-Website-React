@@ -895,7 +895,7 @@ body, html {
 .footer {
   margin-top: 25px;
   height: auto;
-  width: 100vw;
+  width: 100%;
   background-color: #202121;
   color: white;
   padding: 3rem;
@@ -1097,7 +1097,7 @@ body, html {
   }
   .footer p {
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
   }
   .popup1 {
     width: 72%;

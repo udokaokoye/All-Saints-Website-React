@@ -40,7 +40,7 @@ const Auth = () => {
     formData.append("email", email);
     formData.append("password", password);
     setisLoading(true);
-    const url = "http://localhost/All%20Saints%20Backend/auth.php?auth=admin";
+    const url = "http://192.168.1.112/All%20Saints%20Backend/auth.php?auth=admin";
     fetch(url, {
       method: "POST",
       body: formData,
