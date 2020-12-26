@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./Admin.css";
 const Admin = () => {
-  const [sideBar, setsideBar] = useState(false)
+  const [sideBar, setsideBar] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["admin"]);
   const history = useHistory();
   const [contact, setcontact] = useState(true);
@@ -50,8 +50,6 @@ const Admin = () => {
     window.scrollTo(0, 0);
   } // For Chrome, Firefox, IE and Opera
 
- 
-
   function enableScrolling() {
     window.onscroll = function () {};
   }
@@ -76,7 +74,7 @@ const Admin = () => {
     setisLoading(true);
     if (cookies.admin) {
       const url =
-        "http://192.168.1.112/All%20Saints%20Backend/verify.php?mode=admin";
+        "http://192.168.1.4/All%20Saints%20Backend/verify.php?mode=admin";
 
       const formData = new FormData();
       formData.append("admin_id", cookies.admin);
@@ -107,7 +105,7 @@ const Admin = () => {
 
   const fetchContact = () => {
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/fetch_contact.php";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/fetch_contact.php";
 
     fetch(url, {
       method: "POST",
@@ -123,7 +121,7 @@ const Admin = () => {
 
   const fetchPrayerRequest = () => {
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/fetch_prayer.php";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/fetch_prayer.php";
 
     fetch(url, {
       method: "POST",
@@ -143,7 +141,7 @@ const Admin = () => {
       setisLoading(false);
       return;
     }
-    const url = `http://192.168.1.112/All%20Saints%20Backend/delete.php?table=${table}`;
+    const url = `http://192.168.1.4/All%20Saints%20Backend/delete.php?table=${table}`;
 
     const formData = new FormData();
     formData.append("id", id);
@@ -182,7 +180,7 @@ const Admin = () => {
       return;
     }
     setisLoading(true);
-    const url = `http://192.168.1.112/All%20Saints%20Backend/add_user.php?user=editor`;
+    const url = `http://192.168.1.4/All%20Saints%20Backend/add_user.php?user=editor`;
 
     const formData = new FormData();
     formData.append("lastname", edt_lastname);
@@ -226,7 +224,7 @@ const Admin = () => {
       return;
     }
     setisLoading(true);
-    const url = `http://192.168.1.112/All%20Saints%20Backend/add_user.php?user=admin`;
+    const url = `http://192.168.1.4/All%20Saints%20Backend/add_user.php?user=admin`;
 
     const formData = new FormData();
     formData.append("lastname", adm_lastname);
@@ -250,7 +248,7 @@ const Admin = () => {
 
   const fetchEditor = () => {
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/user.php?qr=editor";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/user.php?qr=editor";
 
     fetch(url, {
       method: "POST",
@@ -265,7 +263,7 @@ const Admin = () => {
 
   const fetchAdmin = () => {
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/user.php?qr=admin";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/user.php?qr=admin";
 
     fetch(url, {
       method: "POST",
@@ -285,7 +283,7 @@ const Admin = () => {
       setisLoading(false);
       return;
     }
-    const url = `http://192.168.1.112/All%20Saints%20Backend/user.php?del=${table}`;
+    const url = `http://192.168.1.4/All%20Saints%20Backend/user.php?del=${table}`;
 
     const formData = new FormData();
     formData.append("id", id);
@@ -374,13 +372,13 @@ const Admin = () => {
         </div>
 
         <div className="menu">
-        <FontAwesomeIcon
-                          color="red"
-                          className="bars"
-                          style={{ cursor: "pointer" }}
-                          onClick={() => sideBar ? setsideBar(false) : setsideBar(true)}
-                          icon={faBars}
-                        />
+          <FontAwesomeIcon
+            color="red"
+            className="bars"
+            style={{ cursor: "pointer" }}
+            onClick={() => (sideBar ? setsideBar(false) : setsideBar(true))}
+            icon={faBars}
+          />
         </div>
       </div>
 
@@ -679,28 +677,34 @@ const Admin = () => {
         ""
       )}
 
-<div onClick={() => setsideBar(false)} className="overlay-side" style={{display: sideBar ? "block" : "none"}}></div>
-    
-    <div className="sidebar" style={sideBar ? open : close}>
+      <div
+        onClick={() => setsideBar(false)}
+        className="overlay-side"
+        style={{ display: sideBar ? "block" : "none" }}
+      ></div>
+
+      <div className="sidebar" style={sideBar ? open : close}>
         <div className="bar">
           <div className="img">
-            <img src={require('../../../assets/NA.png')} alt=""/>
+            <img src={require("../../../assets/NA.png")} alt="" />
           </div>
-          <span onClick={() => setsideBar(false)}><FontAwesomeIcon
-                          className="bars"
-                          style={{ cursor: "pointer" }}
-                          icon={faTimes}
-                        /></span>
+          <span onClick={() => setsideBar(false)}>
+            <FontAwesomeIcon
+              className="bars"
+              style={{ cursor: "pointer" }}
+              icon={faTimes}
+            />
+          </span>
         </div>
         <div className="sidebar-links">
           <div className="nv-lk">
-          <button
+            <button
               onClick={() => {
                 setcontact(true);
                 setprayer_Req(false);
                 setadd_admin(false);
                 setadd_editor(false);
-                setsideBar(false)
+                setsideBar(false);
               }}
             >
               Contacts
@@ -708,13 +712,13 @@ const Admin = () => {
           </div>
 
           <div className="nv-lk">
-          <button
+            <button
               onClick={() => {
                 setcontact(false);
                 setprayer_Req(true);
                 setadd_admin(false);
                 setadd_editor(false);
-                setsideBar(false)
+                setsideBar(false);
               }}
             >
               Prayer Requests
@@ -722,13 +726,13 @@ const Admin = () => {
           </div>
 
           <div className="nv-lk">
-          <button
+            <button
               onClick={() => {
                 setcontact(false);
                 setprayer_Req(false);
                 setadd_admin(true);
                 setadd_editor(false);
-                setsideBar(false)
+                setsideBar(false);
               }}
             >
               Add Admin
@@ -736,13 +740,13 @@ const Admin = () => {
           </div>
 
           <div className="nv-lk">
-          <button
+            <button
               onClick={() => {
                 setcontact(false);
                 setprayer_Req(false);
                 setadd_admin(false);
                 setadd_editor(true);
-                setsideBar(false)
+                setsideBar(false);
               }}
             >
               Add Editor
@@ -750,14 +754,16 @@ const Admin = () => {
           </div>
 
           <div className="nv-lk">
-          <button style={{backgroundColor: 'red'}} className="logout" onClick={Logout}>
+            <button
+              style={{ backgroundColor: "red" }}
+              className="logout"
+              onClick={Logout}
+            >
               Logout
             </button>
           </div>
-
-         
         </div>
-    </div>
+      </div>
     </div>
   );
 };

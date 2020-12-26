@@ -12,7 +12,7 @@ import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 const Editor = () => {
-  const [sideBar, setsideBar] = useState(false)
+  const [sideBar, setsideBar] = useState(false);
   const [misc, setmisc] = useState(true);
   const [evt, setevt] = useState(false);
   const [dss, setdss] = useState(false);
@@ -64,12 +64,9 @@ const Editor = () => {
     window.scrollTo(0, 0);
   }
 
-  
   function noScroll() {
     window.scrollTo(0, 0);
   } // For Chrome, Firefox, IE and Opera
-
- 
 
   function enableScrolling() {
     window.onscroll = function () {};
@@ -92,9 +89,9 @@ const Editor = () => {
   };
 
   if (sideBar) {
-    disableScrolling()
+    disableScrolling();
   } else {
-    enableScrolling()
+    enableScrolling();
   }
 
   const Logout = () => {
@@ -106,7 +103,7 @@ const Editor = () => {
     setisLoading(true);
     if (cookies.user) {
       const url =
-        "http://192.168.1.112/All%20Saints%20Backend/verify.php?mode=already_logged";
+        "http://192.168.1.4/All%20Saints%20Backend/verify.php?mode=already_logged";
 
       const formData = new FormData();
       formData.append("user_id", cookies.user);
@@ -140,14 +137,14 @@ const Editor = () => {
     formData.append("cnt_phone", cnt_phn);
     formData.append("cnt_email", cnt_email);
     formData.append("live_service", live_service);
-    formData.append("live_img_width", live_img_width)
+    formData.append("live_img_width", live_img_width);
     var image = document.getElementById("live_service_banner").files;
 
     if (image[0] != null) {
       formData.append("live_img", image[0]);
     }
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/misc.php";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/misc.php";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -198,7 +195,7 @@ const Editor = () => {
     formData.append("evt_date", evt_date);
     formData.append("evt_time", evt_time);
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=upl";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/event.php?mode=upl";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -234,7 +231,7 @@ const Editor = () => {
     formData.append("dss_date", dss_date);
     formData.append("dss_content", dss_content);
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/dss.php?mode=upl";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/dss.php?mode=upl";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -254,7 +251,7 @@ const Editor = () => {
   const fetchMisc = () => {
     const formData = new FormData();
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/random.php?qr=all";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -268,8 +265,8 @@ const Editor = () => {
         setcnt_phn(res["cnt_phone"]);
         setcnt_email(res["cnt_email"]);
         setlive_service(res["live_service"]);
-        setlive_img(res['live_img'])
-        setlive_img_width(res['live_img_width']);
+        setlive_img(res["live_img"]);
+        setlive_img_width(res["live_img_width"]);
         setisLoading(false);
       })
       .catch((err) => console.log(err));
@@ -277,7 +274,7 @@ const Editor = () => {
 
   const fetchEvents = () => {
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=dwl";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/event.php?mode=dwl";
     fetch(url, {
       method: "POST",
     })
@@ -294,7 +291,7 @@ const Editor = () => {
     const formData = new FormData();
     formData.append("id", id);
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=del";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/event.php?mode=del";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -314,7 +311,7 @@ const Editor = () => {
 
   const fetchChat = () => {
     // setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/chat.php?qr=dwl-ord";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/chat.php?qr=dwl-ord";
     fetch(url, {
       method: "POST",
     })
@@ -333,7 +330,7 @@ const Editor = () => {
       setisLoading(false);
       return;
     }
-    const url = `http://192.168.1.112/All%20Saints%20Backend/delete.php?table=${table}`;
+    const url = `http://192.168.1.4/All%20Saints%20Backend/delete.php?table=${table}`;
 
     const formData = new FormData();
     formData.append("id", id);
@@ -355,7 +352,7 @@ const Editor = () => {
   };
 
   const likeChat = (id) => {
-    const url = `http://192.168.1.112/All%20Saints%20Backend/like.php?mode=upl`;
+    const url = `http://192.168.1.4/All%20Saints%20Backend/like.php?mode=upl`;
 
     const formData = new FormData();
     formData.append("chat_id", id);
@@ -442,13 +439,13 @@ const Editor = () => {
         </div>
 
         <div className="menu">
-        <FontAwesomeIcon
-                          color="red"
-                          className="bars"
-                          style={{ cursor: "pointer" }}
-                          onClick={() => sideBar ? setsideBar(false) : setsideBar(true)}
-                          icon={faBars}
-                        />
+          <FontAwesomeIcon
+            color="red"
+            className="bars"
+            style={{ cursor: "pointer" }}
+            onClick={() => (sideBar ? setsideBar(false) : setsideBar(true))}
+            icon={faBars}
+          />
         </div>
       </div>
 
@@ -745,15 +742,13 @@ const Editor = () => {
               return (
                 <div className="main_content">
                   <h1>{chat_info.user}</h1>
-                  <p className='msg'>{chat_info.message}</p>
+                  <p className="msg">{chat_info.message}</p>
                   {moment().format("MMMM Do, YYYY") ==
-                      moment(chat_info.created_at).format("MMMM Do, YYYY") ? (
-                        <p>{moment(chat_info.created_at).fromNow()}</p>
-                      ) : (
-                        <p>
-                          {moment(chat_info.created_at).format("DD MMM YYYY")}
-                        </p>
-                      )}
+                  moment(chat_info.created_at).format("MMMM Do, YYYY") ? (
+                    <p>{moment(chat_info.created_at).fromNow()}</p>
+                  ) : (
+                    <p>{moment(chat_info.created_at).format("DD MMM YYYY")}</p>
+                  )}
                   <button onClick={() => deleteFuc("chat", chat_info.id)}>
                     Delete
                   </button>
@@ -778,29 +773,34 @@ const Editor = () => {
         ""
       )}
 
+      <div
+        onClick={() => setsideBar(false)}
+        className="overlay-side"
+        style={{ display: sideBar ? "block" : "none" }}
+      ></div>
 
-<div onClick={() => setsideBar(false)} className="overlay-side" style={{display: sideBar ? "block" : "none"}}></div>
-    
-    <div className="sidebar" style={sideBar ? open : close}>
+      <div className="sidebar" style={sideBar ? open : close}>
         <div className="bar">
           <div className="img">
-            <img src={require('../../../assets/NA.png')} alt=""/>
+            <img src={require("../../../assets/NA.png")} alt="" />
           </div>
-          <span onClick={() => setsideBar(false)}><FontAwesomeIcon
-                          className="bars"
-                          style={{ cursor: "pointer" }}
-                          icon={faTimes}
-                        /></span>
+          <span onClick={() => setsideBar(false)}>
+            <FontAwesomeIcon
+              className="bars"
+              style={{ cursor: "pointer" }}
+              icon={faTimes}
+            />
+          </span>
         </div>
         <div className="sidebar-links">
           <div className="nv-lk">
-          <button
+            <button
               onClick={() => {
                 setmisc(true);
                 setevt(false);
                 setdss(false);
                 setchat(false);
-                setsideBar(false)
+                setsideBar(false);
               }}
             >
               Misc
@@ -808,13 +808,13 @@ const Editor = () => {
           </div>
 
           <div className="nv-lk">
-          <button
+            <button
               onClick={() => {
                 setmisc(false);
                 setevt(true);
                 setdss(false);
                 setchat(false);
-                setsideBar(false)
+                setsideBar(false);
               }}
             >
               Add Events
@@ -822,13 +822,13 @@ const Editor = () => {
           </div>
 
           <div className="nv-lk">
-          <button
+            <button
               onClick={() => {
                 setmisc(false);
                 setevt(false);
                 setdss(true);
                 setchat(false);
-                setsideBar(false)
+                setsideBar(false);
               }}
             >
               Add Dss
@@ -836,13 +836,13 @@ const Editor = () => {
           </div>
 
           <div className="nv-lk">
-          <button
+            <button
               onClick={() => {
                 setmisc(false);
                 setevt(false);
                 setdss(false);
                 setchat(true);
-                setsideBar(false)
+                setsideBar(false);
               }}
             >
               Chat
@@ -850,14 +850,16 @@ const Editor = () => {
           </div>
 
           <div className="nv-lk">
-          <button style={{backgroundColor: 'red'}} className="logout" onClick={Logout}>
+            <button
+              style={{ backgroundColor: "red" }}
+              className="logout"
+              onClick={Logout}
+            >
               Logout
             </button>
           </div>
-
-         
         </div>
-    </div>
+      </div>
     </div>
   );
 };

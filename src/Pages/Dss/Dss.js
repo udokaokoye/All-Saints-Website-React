@@ -11,7 +11,7 @@ const Dss = () => {
   const fetchDss = () => {
     setisLoading(true);
     const formData = new FormData();
-    const url = "http://192.168.1.112/All%20Saints%20Backend/dss.php?mode=dwl";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/dss.php?mode=dwl";
     fetch(url, {
       method: "POST",
       body: formData,

@@ -18,7 +18,7 @@ const Auth = () => {
     setisLoading(true);
     if (cookies.user) {
       const url =
-        "http://192.168.1.112/All%20Saints%20Backend/verify.php?mode=already_logged";
+        "http://192.168.1.4/All%20Saints%20Backend/verify.php?mode=already_logged";
 
       const formData = new FormData();
       formData.append("user_id", cookies.user);
@@ -56,7 +56,8 @@ const Auth = () => {
     formData.append("email", email);
     formData.append("password", password);
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/auth.php?auth=editor";
+    const url =
+      "http://192.168.1.4/All%20Saints%20Backend/auth.php?auth=editor";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -102,51 +103,53 @@ const Auth = () => {
         <h5>Please fill in the form below to login</h5>
         <div className="form-login">
           <div className="form">
-            <div className="name">
-              <h3>
-                Email Address <span>*</span>
-              </h3>
-              <div className="input">
-                <div className="inpt1">
-                  <input
-                    type="email"
-                    onChange={(val) => setemail(val.target.value)}
-                    name=""
-                    id=""
-                    style={{
-                      borderColor: error_email ? "red" : "",
-                      borderWidth: error_email ? 2 : "",
-                    }}
-                  />
-                  <small>{error_email}</small>
+            <form>
+              <div className="name">
+                <h3>
+                  Email Address <span>*</span>
+                </h3>
+                <div className="input">
+                  <div className="inpt1">
+                    <input
+                      type="email"
+                      onChange={(val) => setemail(val.target.value)}
+                      name="email"
+                      id="email"
+                      style={{
+                        borderColor: error_email ? "red" : "",
+                        borderWidth: error_email ? 2 : "",
+                      }}
+                    />
+                    <small>{error_email}</small>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="password">
-              <h3>
-                Password <span>*</span>
-              </h3>
-              <div className="input">
-                <div className="inpt1">
-                  <input
-                    onChange={(val) => setpassword(val.target.value)}
-                    type="password"
-                    style={{
-                      borderColor: error_password ? "red" : "",
-                      borderWidth: error_password ? 2 : "",
-                    }}
-                  />
-                  <small>{error_password}</small>
+              <div className="password">
+                <h3>
+                  Password <span>*</span>
+                </h3>
+                <div className="input">
+                  <div className="inpt1">
+                    <input
+                      onChange={(val) => setpassword(val.target.value)}
+                      type="password"
+                      style={{
+                        borderColor: error_password ? "red" : "",
+                        borderWidth: error_password ? 2 : "",
+                      }}
+                    />
+                    <small>{error_password}</small>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <center>
-              <div className="submit">
-                <button onClick={() => Login()}>Login</button>
-              </div>
-            </center>
+              <center>
+                <div className="submit">
+                  <button onClick={() => Login()}>Login</button>
+                </div>
+              </center>
+            </form>
           </div>
         </div>
       </div>

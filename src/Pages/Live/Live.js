@@ -5,7 +5,7 @@ import {
   faTrash,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
-import moment from 'moment';
+import moment from "moment";
 import "./Live.css";
 const Live = () => {
   const [bible_div, setbible_div] = useState(true);
@@ -25,7 +25,7 @@ const Live = () => {
   const fetchMisc = () => {
     const formData = new FormData();
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/random.php?qr=all";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -43,17 +43,17 @@ const Live = () => {
     if (localStorage.getItem("cht_user")) {
       setuser(localStorage.getItem("cht_user"));
     } else {
-       user_cht = prompt("Enter Username");
+      user_cht = prompt("Enter Username");
       if (user_cht === null) {
         return;
       } else {
-        localStorage.setItem("cht_user", user_cht)
+        localStorage.setItem("cht_user", user_cht);
       }
     }
     const formData = new FormData();
     formData.append("chat", chat);
     formData.append("user", localStorage.getItem("cht_user"));
-    const url = "http://192.168.1.112/All%20Saints%20Backend/chat.php?qr=upl";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/chat.php?qr=upl";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -68,7 +68,7 @@ const Live = () => {
   };
 
   const fetchChat = () => {
-    const url = "http://192.168.1.112/All%20Saints%20Backend/chat.php?qr=dwl";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/chat.php?qr=dwl";
     fetch(url, {
       method: "POST",
     })
@@ -90,7 +90,7 @@ const Live = () => {
     if (isDel === false) {
       return;
     }
-    const url = `http://192.168.1.112/All%20Saints%20Backend/delete.php?table=${table}`;
+    const url = `http://192.168.1.4/All%20Saints%20Backend/delete.php?table=${table}`;
 
     const formData = new FormData();
     formData.append("id", id);
@@ -108,24 +108,24 @@ const Live = () => {
   const checkLiveUser = (live_user) => {
     const formData = new FormData();
     formData.append("user", live_user);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/check_user.php";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/check_user.php";
     fetch(url, {
       method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((res) => {
-        if (res === 'NOT EXIST') {
+        if (res === "NOT EXIST") {
           localStorage.setItem("cht_user", live_user);
         } else {
-          alert('Name Taken \n Enter a new name')
+          alert("Name Taken \n Enter a new name");
           let user_cht = prompt("Enter Username");
-          localStorage.setItem("cht_user", user_cht)
+          localStorage.setItem("cht_user", user_cht);
           return;
         }
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   if (isLoading) {
     return (
@@ -147,46 +147,50 @@ const Live = () => {
   return (
     <div className="live">
       <div className="main">
-        
         <div
           dangerouslySetInnerHTML={{ __html: live_service }}
           className="left"
         ></div>
         <div className="right">
-          {browserSize < 768 ? (<div className="bar">
-            <button
-              style={{ fontWeight: bible_div ? "bold" : "inherit" }}
-              onClick={() => {
-                setbible_div(true);
-                setchat_div(false);
-              }}
-            >
-              Bible
-            </button>
-            <button
-              style={{ fontWeight: chat_div ? "bold" : "inherit" }}
-              onClick={() => {
-                setbible_div(false);
-                setchat_div(true);
-              }}
-            >
-              Chat
-            </button>
-          </div>
-         ) : ''}
-         
-            <div style={{display: bible_div ? "block" : 'none'}} className="content">
-              <iframe
-                src="https://chop.bible.com/bible"
-                height="100%"
-                width="100%"
-                frameborder="0"
-              ></iframe>
+          {browserSize < 768 ? (
+            <div className="bar">
+              <button
+                style={{ fontWeight: bible_div ? "bold" : "inherit" }}
+                onClick={() => {
+                  setbible_div(true);
+                  setchat_div(false);
+                }}
+              >
+                Bible
+              </button>
+              <button
+                style={{ fontWeight: chat_div ? "bold" : "inherit" }}
+                onClick={() => {
+                  setbible_div(false);
+                  setchat_div(true);
+                }}
+              >
+                Chat
+              </button>
             </div>
+          ) : (
+            ""
+          )}
+
+          <div
+            style={{ display: bible_div ? "block" : "none" }}
+            className="content"
+          >
+            <iframe
+              src="https://chop.bible.com/bible"
+              height="100%"
+              width="100%"
+              frameborder="0"
+            ></iframe>
+          </div>
 
           {chat_div ? (
             <div className="content">
-              
               <div className="chat">
                 {fetch_chat.map((chat_ft) => {
                   return (
@@ -195,17 +199,19 @@ const Live = () => {
                         <h5>{chat_ft.user}</h5>
                         <p>{chat_ft.message}</p>
                         {moment().format("MMMM Do, YYYY") ==
-                      moment(chat_ft.created_at).format("MMMM Do, YYYY") ? (
-                        <span>{moment(chat_ft.created_at).fromNow()}</span>
-                      ) : (
-                        <span>
-                          {moment(chat_ft.created_at).format("DD MMM YYYY")}
-                        </span>
-                      )}
-                      <br/>
-                      {chat_ft.likes === 'true' ? (
-                        <span>Liked by All Saints AHQ Cathedral</span>
-                      ) : ''}
+                        moment(chat_ft.created_at).format("MMMM Do, YYYY") ? (
+                          <span>{moment(chat_ft.created_at).fromNow()}</span>
+                        ) : (
+                          <span>
+                            {moment(chat_ft.created_at).format("DD MMM YYYY")}
+                          </span>
+                        )}
+                        <br />
+                        {chat_ft.likes === "true" ? (
+                          <span>Liked by All Saints AHQ Cathedral</span>
+                        ) : (
+                          ""
+                        )}
                       </div>
 
                       <div className="rt">
@@ -221,13 +227,15 @@ const Live = () => {
                         </div> */}
                         {chat_ft.user === localStorage.getItem("cht_user") ? (
                           <FontAwesomeIcon
-                          color="red"
-                          className="snd"
-                          style={{ cursor: "pointer" }}
-                          onClick={() => deleteFuc("chat", chat_ft.id)}
-                          icon={faTrash}
-                        />
-                        ) : ''}
+                            color="red"
+                            className="snd"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => deleteFuc("chat", chat_ft.id)}
+                            icon={faTrash}
+                          />
+                        ) : (
+                          ""
+                        )}
                       </div>
                     </div>
                   );
@@ -241,6 +249,7 @@ const Live = () => {
                   type="text"
                   name=""
                   id="chat"
+                  autoComplete="off"
                   onKeyDown={(e) => (e.keyCode === 13 ? sendChat() : "")}
                 />
                 <span onClick={sendChat}>
@@ -251,27 +260,30 @@ const Live = () => {
           ) : (
             ""
           )}
-          {browserSize > 768 ? (<div className="bar">
-            <button
-              style={{ fontWeight: bible_div ? "bold" : "inherit" }}
-              onClick={() => {
-                setbible_div(true);
-                setchat_div(false);
-              }}
-            >
-              Bible
-            </button>
-            <button
-              style={{ fontWeight: chat_div ? "bold" : "inherit" }}
-              onClick={() => {
-                setbible_div(false);
-                setchat_div(true);
-              }}
-            >
-              Chat
-            </button>
-          </div>
-         ) : ''}
+          {browserSize > 768 ? (
+            <div className="bar">
+              <button
+                style={{ fontWeight: bible_div ? "bold" : "inherit" }}
+                onClick={() => {
+                  setbible_div(true);
+                  setchat_div(false);
+                }}
+              >
+                Bible
+              </button>
+              <button
+                style={{ fontWeight: chat_div ? "bold" : "inherit" }}
+                onClick={() => {
+                  setbible_div(false);
+                  setchat_div(true);
+                }}
+              >
+                Chat
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

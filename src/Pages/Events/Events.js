@@ -15,7 +15,7 @@ const Events = () => {
   const fetchEvents = () => {
     setisLoading(true);
     const url =
-      "http://192.168.1.112/All%20Saints%20Backend/event.php?mode=dwl-ord";
+      "http://192.168.1.4/All%20Saints%20Backend/event.php?mode=dwl-ord";
     fetch(url, {
       method: "POST",
     })
@@ -91,21 +91,27 @@ const Events = () => {
       </section>
 
       <section className="evntprop">
-          <h1 className='evt_lu'>Events Line Up</h1>
+        <h1 className="evt_lu">Events Line Up</h1>
         <div className="content">
-        {events.slice(0, 4).map((evt) => {
+          {events.slice(0, 4).map((evt) => {
             return (
               <div className="evt_main">
-            <div className="cal">
-              <span className="dt-no">{moment(evt.evt_date).format("D")}</span>
-              <span className="dt-nm">{moment(evt.evt_date).format("MMM")}</span>
-            </div>
-            <div className="inf">
-              <h3 className='evtnm'>{evt.evt_title}</h3>
-              <span className='evt_tm'>{evt.evt_time}{" "}
-                    {evt.evt_time.substring(0, 2) > 12 ? "pm" : "am"}</span>
-            </div>
-          </div>
+                <div className="cal">
+                  <span className="dt-no">
+                    {moment(evt.evt_date).format("D")}
+                  </span>
+                  <span className="dt-nm">
+                    {moment(evt.evt_date).format("MMM")}
+                  </span>
+                </div>
+                <div className="inf">
+                  <h3 className="evtnm">{evt.evt_title}</h3>
+                  <span className="evt_tm">
+                    {evt.evt_time}{" "}
+                    {evt.evt_time.substring(0, 2) > 12 ? "pm" : "am"}
+                  </span>
+                </div>
+              </div>
             );
           })}
         </div>

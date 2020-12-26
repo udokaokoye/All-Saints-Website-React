@@ -18,7 +18,7 @@ const Contact = () => {
     function noScroll() {
       window.scrollTo(0, 0);
     }
-    window.removeEventListener('scroll', noScroll);
+    window.removeEventListener("scroll", noScroll);
   }, []);
 
   const submitContact = () => {
@@ -40,7 +40,7 @@ const Contact = () => {
     formData.append("email", cnt_email);
     formData.append("message", cnt_message);
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/contact.php";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/contact.php";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -85,7 +85,7 @@ const Contact = () => {
 
     formData.append("prayer", prayer);
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/prayer.php";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/prayer.php";
     fetch(url, {
       method: "POST",
       body: formData,
@@ -113,7 +113,7 @@ const Contact = () => {
   const fetchMisc = () => {
     const formData = new FormData();
     setisLoading(true);
-    const url = "http://192.168.1.112/All%20Saints%20Backend/random.php?qr=all";
+    const url = "http://192.168.1.4/All%20Saints%20Backend/random.php?qr=all";
     fetch(url, {
       method: "POST",
       body: formData,
